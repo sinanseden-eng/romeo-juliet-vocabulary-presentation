@@ -1,0 +1,48 @@
+// In renderFlashcard(), add this line after `const item = vocabularyData[currentDeckIndex];`
+const deckImages = flashcardImageMap[item.id] || [];
+
+// Then replace the current FRONT FACE template with this:
+front.innerHTML = `
+  <div class="space-y-6 my-auto">
+    <div class="flex justify-between items-center">
+      ${getCategoryBadge(item.category)}
+      <span class="text-xs font-mono text-stone-500">${item.scene}</span>
+    </div>
+
+    <div class="space-y-2 text-center">
+      <h2 class="text-3xl sm:text-5xl font-serif font-extrabold text-white tracking-wide flex items-center justify-center gap-3 flex-wrap">
+        <span>${item.word}</span>
+        <button onclick="event.stopPropagation(); speakText('${item.word.split('/')[0].trim()}')" title="Pronounce Word" class="text-stone-400 hover:text-amber-400 text-xl transition">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+      </h2>
+      <span class="text-xs font-mono text-stone-400 block uppercase">${item.pos}</span>
+    </div>
+
+    <div class="grid ${'${deckImages.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-md mx-auto"}'} gap-4 pt-2">
+      ${'${deckImages.map((img, idx) => `'}
+        <figure class="bg-stone-950/90 border border-stone-800 rounded-2xl overflow-hidden shadow-lg">
+          <div class="aspect-[4/3] bg-stone-950 flex items-center justify-center">
+            <img
+              src="assets/flashcards/${'${img}'}"
+              alt="${'${item.word}'} association ${'${idx + 1}'}"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <figcaption class="p-3 text-left">
+            <span class="text-[10px] uppercase font-mono font-bold ${'${idx === 0 ? "text-rose-400" : "text-amber-400"}'} block mb-1">
+              <i class="fa-solid fa-image mr-1"></i> Association ${'${idx + 1}'}
+            </span>
+            <p class="text-xs text-stone-300 leading-relaxed font-medium">${'${idx === 0 ? item.assoc1.title : item.assoc2.title}'} </p>
+            <p class="text-[11px] text-stone-400 leading-relaxed mt-1">${'${idx === 0 ? item.assoc1.desc : item.assoc2.desc}'} </p>
+          </figcaption>
+        </figure>
+      ${'`).join("")'}
+    </div>
+
+    <div class="pt-2 text-stone-500 text-xs font-mono text-center">
+      <i class="fa-solid fa-arrows-rotate mr-1"></i> Click card or press spacebar to reveal definition & Act 1 context
+    </div>
+  </div>
+`;
