@@ -1,214 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Verona 1597: Romeo & Juliet Act 1 Vocabulary & Word Association Codex</title>
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            verona: {
-              crimson: '#7f1d1d',     // Capulet Red
-              blood: '#991b1b',
-              gold: '#d97706',        // Antique Gold
-              amber: '#b45309',
-              parchment: '#fdfbf7',   // Light parchment
-              vellum: '#fef3c7',
-              night: '#0f172a',       // Montague Night Blue
-              navy: '#1e293b',
-              ink: '#1c1917'
-            }
-          },
-          fontFamily: {
-            serif: ['Cinzel', 'Georgia', 'serif'],
-            renaissance: ['"Cormorant Garamond"', 'Baskerville', 'serif'],
-            sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
-          }
-        }
-      }
-    }
-  </script>
+  <title>Verona 1597: Romeo & Juliet Act 1 Lexicon</title>
 
-  <!-- Google Fonts & FontAwesome -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+  <!-- Google Fonts: Renaissance Serif & Clean Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+    /* Custom Renaissance & Dark Verona Palette */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0c0a09; /* stone-950 */
+      color: #f5f5f4;
+    }
+
+    .font-serif-title { font-family: 'Cinzel', serif; }
+    .font-renaissance { font-family: 'Cormorant Garamond', serif; }
+
     /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; height: 8px; }
     ::-webkit-scrollbar-track { background: #1c1917; }
     ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #f59e0b; }
 
-    /* 3D Card Flip styles */
-    .perspective-1000 { perspective: 1000px; }
-    .transform-style-3d { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-    .backface-hidden { backface-visibility: hidden; }
-    .rotate-y-180 { transform: rotateY(180deg); }
+    /* 3D Card Flip styles (Fixes inverted text bug) */
+    .perspective-1000 { 
+      perspective: 1000px; 
+    }
+    .transform-style-3d { 
+      transform-style: preserve-3d; 
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+    }
+    .backface-hidden { 
+      backface-visibility: hidden; 
+      -webkit-backface-visibility: hidden; 
+    }
+    .rotate-y-180 { 
+      transform: rotateY(180deg); 
+    }
 
     /* Golden foil & borders */
     .gold-border-gradient {
       border-image: linear-gradient(to bottom right, #f59e0b, #78350f, #d97706) 1;
     }
-    .parchment-texture {
-      background-color: #fcf9f2;
-      background-image: radial-gradient(#e5e7eb 0.75px, transparent 0.75px);
-      background-size: 16px 16px;
+
+    .capulet-glow {
+      box-shadow: 0 0 35px -5px rgba(225, 29, 72, 0.25);
+    }
+    .montague-glow {
+      box-shadow: 0 0 35px -5px rgba(14, 165, 233, 0.25);
     }
   </style>
 </head>
-<body class="bg-stone-950 text-stone-100 font-sans antialiased min-h-screen selection:bg-amber-600 selection:text-white flex flex-col">
+<body class="antialiased selection:bg-amber-600 selection:text-white min-h-screen flex flex-col">
 
-  <!-- TOP ROYAL BANNER -->
-  <header class="sticky top-0 z-50 bg-stone-950/95 backdrop-blur-md border-b border-amber-900/60 shadow-2xl">
+  <header class="sticky top-0 z-50 bg-stone-950/90 backdrop-blur-md border-b border-amber-900/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand & Emblems -->
+      <!-- Brand & Title -->
       <div class="flex items-center space-x-3.5">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-900 via-amber-800 to-amber-600 border border-amber-400/40 flex items-center justify-center text-amber-200 text-2xl shadow-lg shadow-rose-950/60">
-          <i class="fa-solid fa-feather-pointed"></i>
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-amber-700 via-amber-500 to-rose-700 flex items-center justify-center text-white shadow-lg shadow-amber-950/80 border border-amber-400/40">
+          <i class="fa-solid fa-feather-pointed text-xl"></i>
         </div>
         <div>
-          <span class="text-[11px] font-mono tracking-widest text-amber-400 uppercase block font-semibold">Shakespearean Study Series</span>
-          <h1 class="text-lg sm:text-xl font-serif font-bold text-stone-100 tracking-wide flex items-center gap-2">
-            <span>Romeo & Juliet</span>
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-rose-950 text-rose-300 border border-rose-800/80 font-mono">Act 1 Lexicon</span>
-          </h1>
+          <div class="flex items-center gap-2">
+            <span class="font-serif-title font-bold text-lg tracking-wider text-amber-100">VERONA 1597</span>
+            <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-rose-950/80 text-rose-300 border border-rose-800/60 font-semibold">Act 1 Lexicon</span>
+          </div>
+          <p class="text-xs text-stone-400 font-renaissance italic text-sm">Word Association & Context Codex</p>
         </div>
       </div>
 
       <!-- Navigation Tabs -->
-      <nav class="flex items-center space-x-1 sm:space-x-2 bg-stone-900/90 p-1.5 rounded-2xl border border-stone-800 overflow-x-auto text-xs font-semibold">
-        <button onclick="switchTab('lexicon')" id="tab-btn-lexicon" class="px-3 sm:px-4 py-2 rounded-xl transition bg-amber-600 text-white shadow-md flex items-center gap-2">
-          <i class="fa-solid fa-book-bookmark"></i>
-          <span>Lexicon Codex</span>
+      <nav class="flex items-center gap-1 sm:gap-2">
+        <button onclick="switchTab('lexicon')" id="tab-btn-lexicon" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-amber-600 text-white shadow-md shadow-amber-950">
+          <i class="fa-solid fa-book-bookmark mr-1.5"></i> Lexicon Codex
         </button>
-        <button onclick="switchTab('flashcards')" id="tab-btn-flashcards" class="px-3 sm:px-4 py-2 rounded-xl text-stone-400 hover:text-white hover:bg-stone-800 transition flex items-center gap-2">
-          <i class="fa-solid fa-layer-group text-amber-400"></i>
-          <span>Association Deck</span>
+        <button onclick="switchTab('deck')" id="tab-btn-deck" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-stone-400 hover:text-stone-100 hover:bg-stone-900">
+          <i class="fa-solid fa-layer-group mr-1.5"></i> Association Deck
         </button>
-        <button onclick="switchTab('quiz')" id="tab-btn-quiz" class="px-3 sm:px-4 py-2 rounded-xl text-stone-400 hover:text-white hover:bg-stone-800 transition flex items-center gap-2">
-          <i class="fa-solid fa-swords text-rose-400"></i>
-          <span>Verona Duel</span>
+        <button onclick="switchTab('duel')" id="tab-btn-duel" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-stone-400 hover:text-stone-100 hover:bg-stone-900">
+          <i class="fa-solid fa-shield-halved mr-1.5"></i> Verona Duel
         </button>
-        <button onclick="switchTab('context')" id="tab-btn-context" class="px-3 sm:px-4 py-2 rounded-xl text-stone-400 hover:text-white hover:bg-stone-800 transition flex items-center gap-2">
-          <i class="fa-solid fa-scroll text-amber-300"></i>
-          <span class="hidden md:inline">Act 1 Lines</span>
+        <button onclick="switchTab('play')" id="tab-btn-play" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-stone-400 hover:text-stone-100 hover:bg-stone-900">
+          <i class="fa-solid fa-scroll mr-1.5"></i> Act 1 Lines
         </button>
       </nav>
 
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative overflow-hidden border-b border-amber-900/40 bg-gradient-to-b from-stone-900 via-stone-950 to-stone-950 py-10 px-4 sm:px-6 lg:px-8">
+  <section class="relative overflow-hidden bg-gradient-to-b from-stone-900 via-stone-950 to-stone-950 border-b border-amber-900/30 py-10 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/70 border border-amber-700/60 text-amber-300 text-xs font-mono font-medium mb-3">
-          <i class="fa-solid fa-compass-drafting"></i> Semantic Association & Contextual Mastery
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-serif font-extrabold text-stone-100 tracking-tight leading-tight">
-          Master the Language of <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-amber-200">Passion, Feud & Fate</span>
-        </h2>
-        <p class="mt-3 text-sm sm:text-base text-stone-300 font-renaissance leading-relaxed">
-          Explore all 21 key terms from your <em>Romeo & Juliet</em> Act 1 study slides. Anchor every word into long-term memory through <strong class="text-amber-300 font-sans text-xs uppercase tracking-wider">Dual Cognitive Associations</strong>, direct Shakespearean quotations, and real-world contemporary applications.
+      <div class="max-w-2xl space-y-3 text-center md:text-left">
+        <span class="text-xs uppercase font-mono tracking-widest text-amber-500 font-bold bg-amber-950/60 px-3 py-1 rounded-full border border-amber-800/50 inline-block">
+          <i class="fa-solid fa-masks-theater mr-1"></i> William Shakespeare • Act 1 Syllabus
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-serif-title font-extrabold text-amber-50 tracking-wide">
+          Ancient Grudge to New Mutiny
+        </h1>
+        <p class="text-sm sm:text-base text-stone-300 font-renaissance text-lg leading-relaxed">
+          Master the 21 key words of hostility, civility, honor, and despair in Act 1 through sensory mental anchors and parallel Shakespearean-to-modern examples.
         </p>
-
-        <!-- Stats Bar -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
-          <div class="bg-stone-900/80 p-3 rounded-xl border border-stone-800 text-center">
-            <span class="block text-xl font-bold font-mono text-amber-400">21</span>
-            <span class="text-[11px] text-stone-400 font-medium">Core Slides / Terms</span>
-          </div>
-          <div class="bg-stone-900/80 p-3 rounded-xl border border-stone-800 text-center">
-            <span class="block text-xl font-bold font-mono text-rose-400">42+</span>
-            <span class="text-[11px] text-stone-400 font-medium">Evocative Associations</span>
-          </div>
-          <div class="bg-stone-900/80 p-3 rounded-xl border border-stone-800 text-center">
-            <span class="block text-xl font-bold font-mono text-emerald-400">42</span>
-            <span class="text-[11px] text-stone-400 font-medium">Contextual Examples</span>
-          </div>
-          <div class="bg-stone-900/80 p-3 rounded-xl border border-stone-800 text-center">
-            <span id="saved-notes-count" class="block text-xl font-bold font-mono text-indigo-400">0</span>
-            <span class="text-[11px] text-stone-400 font-medium">Personal Links Saved</span>
-          </div>
-        </div>
       </div>
 
-      <!-- Shakespearean Quote Plaque -->
-      <div class="hidden lg:block w-80 p-5 rounded-2xl bg-gradient-to-br from-rose-950/40 via-stone-900 to-stone-900 border border-amber-600/30 text-center shadow-xl">
-        <i class="fa-solid fa-quote-left text-amber-500/40 text-3xl mb-2"></i>
-        <blockquote class="text-sm font-renaissance italic text-stone-200 leading-relaxed">
-          "From forth the fatal loins of these two foes, A pair of star-cross'd lovers take their life..."
-        </blockquote>
-        <div class="mt-3 text-[11px] font-mono font-bold uppercase tracking-widest text-amber-400">— Prologue, Act I</div>
+      <!-- Live Interactive Progress -->
+      <div class="bg-stone-900/90 border border-amber-700/30 rounded-2xl p-5 shadow-2xl flex items-center gap-6 shrink-0">
+        <div class="text-center">
+          <span class="block text-2xl sm:text-3xl font-bold font-mono text-amber-400" id="stat-words-count">21</span>
+          <span class="text-[10px] uppercase font-mono text-stone-400 tracking-wider">Act 1 Words</span>
+        </div>
+        <div class="w-px h-10 bg-stone-800"></div>
+        <div class="text-center">
+          <span class="block text-2xl sm:text-3xl font-bold font-mono text-rose-400" id="stat-mastered-count">0</span>
+          <span class="text-[10px] uppercase font-mono text-stone-400 tracking-wider">Learned</span>
+        </div>
+        <div class="w-px h-10 bg-stone-800"></div>
+        <div class="text-center">
+          <span class="block text-2xl sm:text-3xl font-bold font-mono text-emerald-400" id="stat-score-count">0%</span>
+          <span class="text-[10px] uppercase font-mono text-stone-400 tracking-wider">Duel Accuracy</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MAIN WRAPPER -->
-  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-
-    <!-- ========================================================= -->
-    <!-- TAB 1: THE LEXICON CODEX (SEARCHABLE CARDS) -->
-    <!-- ========================================================= -->
-    <section id="view-lexicon" class="space-y-6">
+  <main id="view-lexicon" class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    
+    <!-- Controls Bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 bg-stone-900/60 p-4 rounded-2xl border border-stone-800">
       
-      <!-- Filter and Search Header -->
-      <div class="bg-stone-900/90 border border-stone-800 p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-lg">
-        <div class="relative flex-1 max-w-md">
-          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500"></i>
-          <input 
-            type="text" 
-            id="lexicon-search" 
-            oninput="filterLexicon()" 
-            placeholder="Search words, associations, definitions, or quotes..." 
-            class="w-full pl-10 pr-4 py-2.5 bg-stone-950 border border-stone-700 rounded-xl text-xs sm:text-sm text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition"
-          >
-        </div>
-
-        <!-- Category Tags -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
-          <button onclick="setCategoryFilter('all')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white transition shrink-0" data-category="all">All (21)</button>
-          <button onclick="setCategoryFilter('feud')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition shrink-0" data-category="feud">Feud & Conflict</button>
-          <button onclick="setCategoryFilter('society')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition shrink-0" data-category="society">Civic Duty & Law</button>
-          <button onclick="setCategoryFilter('emotion')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition shrink-0" data-category="emotion">Love & Emotion</button>
-          <button onclick="setCategoryFilter('power')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition shrink-0" data-category="power">Virtue & Status</button>
-        </div>
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-80">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-500 text-sm"></i>
+        <input 
+          type="text" 
+          id="lexicon-search" 
+          oninput="renderLexiconGrid()" 
+          placeholder="Search word, meaning, or association..."
+          class="w-full bg-stone-950 border border-stone-800 focus:border-amber-500 rounded-xl pl-9 pr-4 py-2.5 text-xs sm:text-sm text-stone-200 placeholder-stone-500 outline-none transition"
+        />
       </div>
 
-      <!-- Word Cards Grid -->
-      <div id="lexicon-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Injected Dynamically by JavaScript -->
+      <!-- Filters -->
+      <div class="flex items-center gap-2 w-full sm:w-auto overflow-x-auto">
+        <button onclick="filterCategory('all')" class="cat-pill active px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white transition">All (21)</button>
+        <button onclick="filterCategory('conflict')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition">Conflict & Feud</button>
+        <button onclick="filterCategory('courtship')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition">Love & Family</button>
+        <button onclick="filterCategory('authority')" class="cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition">Honor & Law</button>
       </div>
-    </section>
 
+    </div>
 
-    <!-- ========================================================= -->
-    <!-- TAB 2: WORD ASSOCIATION FLASHCARD DECK -->
-    <!-- ========================================================= -->
-    <section id="view-flashcards" class="hidden space-y-8 max-w-4xl mx-auto">
+    <!-- Word Grid Container -->
+    <div id="lexicon-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Injected dynamically by JavaScript -->
+    </div>
+
+  </main>
+
+  <main id="view-deck" class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full hidden">
+    
+    <div class="space-y-6">
       
-      <!-- Top Deck Bar -->
-      <div class="flex items-center justify-between bg-stone-900 border border-stone-800 p-4 rounded-2xl">
-        <div class="flex items-center space-x-3">
-          <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-mono font-bold">
-            <i class="fa-solid fa-brain"></i>
-          </span>
-          <div>
-            <h3 class="font-serif font-bold text-sm text-stone-100">Association Recall Deck</h3>
-            <p class="text-[11px] text-stone-400">Trigger memories using evocative sensory hooks</p>
-          </div>
+      <!-- Top Deck Helper -->
+      <div class="flex items-center justify-between">
+        <div>
+          <span class="text-xs font-mono uppercase text-amber-500 font-bold tracking-widest block">Sensory Association Flashcards</span>
+          <h2 class="text-xl sm:text-2xl font-serif-title font-bold text-white">The Memory Anchors</h2>
         </div>
-
         <div class="flex items-center gap-3">
           <span id="deck-counter" class="text-xs font-mono text-amber-400 font-bold">1 / 21</span>
           <button onclick="shuffleDeck()" class="px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-semibold transition">
@@ -217,36 +186,18 @@
         </div>
       </div>
 
-      <!-- 3D Flipping Card Container -->
-      <div class="perspective-1000 w-full min-h-[440px] cursor-pointer" onclick="toggleCardFlip()">
-        <div id="flashcard-inner" class="relative w-full min-h-[440px] transform-style-3d bg-stone-900 border-2 border-amber-600/40 rounded-3xl p-6 sm:p-10 shadow-2xl flex flex-col justify-between">
+      <!-- 3D Flipping Card Container (Dual-face architecture ensures normal text orientation on flip) -->
+      <div class="perspective-1000 w-full min-h-[500px] cursor-pointer select-none" onclick="toggleCardFlip()">
+        <div id="flashcard-inner" class="relative w-full min-h-[500px] transform-style-3d transition-transform duration-500 rounded-3xl">
           
-          <!-- FRONT OF CARD -->
-          <div id="card-front" class="space-y-6 text-center my-auto">
-            <span id="card-cat-badge" class="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-widest bg-stone-800 text-amber-400 border border-stone-700">
-              Conflict & Feud
-            </span>
+          <!-- FRONT FACE OF CARD -->
+          <div id="card-front" class="absolute inset-0 w-full h-full backface-hidden bg-stone-900 border-2 border-amber-600/40 rounded-3xl p-6 sm:p-10 shadow-2xl flex flex-col justify-between overflow-y-auto">
+            <!-- Injected by renderFlashcard() -->
+          </div>
 
-            <div class="space-y-2">
-              <h2 id="card-word" class="text-4xl sm:text-5xl font-serif font-extrabold text-white tracking-wide">
-                civil / civilian
-              </h2>
-              <span id="card-pos" class="text-xs font-mono text-stone-400 block uppercase">[adj. / n.]</span>
-            </div>
-
-            <!-- Associations Hooks as Clues -->
-            <div class="pt-4 border-t border-stone-800 space-y-3 text-left max-w-lg mx-auto">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold block text-center">
-                <i class="fa-solid fa-lightbulb mr-1"></i> Mental Association Anchors
-              </span>
-              <div id="card-associations-preview" class="space-y-2">
-                <!-- Preview badges -->
-              </div>
-            </div>
-
-            <div class="pt-6 text-stone-500 text-xs font-mono">
-              <i class="fa-solid fa-arrows-rotate mr-1"></i> Click card or press spacebar to reveal definition & Act 1 context
-            </div>
+          <!-- BACK FACE OF CARD (Pre-rotated so flipping displays normal text) -->
+          <div id="card-back" class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-stone-900 border-2 border-amber-500/60 rounded-3xl p-6 sm:p-10 shadow-2xl flex flex-col justify-between overflow-y-auto">
+            <!-- Injected by renderFlashcard() -->
           </div>
 
         </div>
@@ -254,895 +205,734 @@
 
       <!-- Deck Controls -->
       <div class="flex items-center justify-between">
-        <button onclick="prevCard()" class="px-5 py-2.5 rounded-xl bg-stone-900 border border-stone-800 hover:border-stone-700 text-stone-300 text-xs font-bold transition flex items-center gap-2">
-          <i class="fa-solid fa-chevron-left"></i> Previous
+        <button onclick="prevCard()" class="px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-300 font-semibold text-sm border border-stone-800 transition flex items-center gap-2">
+          <i class="fa-solid fa-arrow-left"></i> Previous
         </button>
 
-        <button onclick="toggleCardFlip()" class="px-6 py-2.5 rounded-xl bg-amber-600/20 border border-amber-500/40 text-amber-300 hover:bg-amber-600 hover:text-white text-xs font-bold transition flex items-center gap-2">
-          <i class="fa-solid fa-repeat"></i> Flip Card
+        <button onclick="toggleCardFlip()" class="px-6 py-2.5 rounded-xl bg-amber-600/20 hover:bg-amber-600/30 text-amber-300 font-semibold text-sm border border-amber-500/40 transition flex items-center gap-2">
+          <i class="fa-solid fa-arrows-rotate"></i> Flip Card (Space)
         </button>
 
-        <button onclick="nextCard()" class="px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-amber-700/30">
-          Next <i class="fa-solid fa-chevron-right"></i>
+        <button onclick="nextCard()" class="px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-300 font-semibold text-sm border border-stone-800 transition flex items-center gap-2">
+          Next <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
 
-      <!-- Personal Association Laboratory (Local Storage) -->
-      <div class="bg-stone-900/90 border border-stone-800 p-6 rounded-2xl space-y-3">
-        <div class="flex items-center justify-between">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400 font-mono flex items-center gap-2">
-            <i class="fa-solid fa-pen-nib"></i> My Personal Word Association (Saved to Browser)
-          </h4>
-          <span id="save-status" class="text-[10px] font-mono text-emerald-400 hidden">Saved!</span>
-        </div>
-        <p class="text-xs text-stone-400">
-          What personal memory, image, pop culture scene, or sound does this word trigger for you?
-        </p>
+      <!-- Association Creator Notepad -->
+      <div class="p-6 rounded-2xl bg-stone-900/60 border border-stone-800 mt-8 space-y-3">
+        <span class="text-xs font-mono uppercase text-amber-400 font-bold block">
+          <i class="fa-solid fa-pen-nib mr-1.5"></i> Student Personal Association Notebook
+        </span>
+        <p class="text-xs text-stone-400">Write your own personal memory link for this word. It will automatically save in your browser.</p>
         <div class="flex gap-2">
           <input 
             type="text" 
             id="student-assoc-input" 
-            placeholder="e.g., 'Makes me think of the school hallway brawl or a polite bowing host...'" 
-            class="flex-1 bg-stone-950 border border-stone-700 rounded-xl px-4 py-2.5 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-500"
-          >
-          <button onclick="saveStudentAssociation()" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-xl transition shrink-0">
-            Save Link
+            placeholder="e.g. Foe makes me think of Batman vs. Joker because..."
+            class="flex-grow bg-stone-950 border border-stone-800 focus:border-amber-500 rounded-xl px-4 py-2.5 text-xs text-stone-200 outline-none"
+          />
+          <button onclick="saveStudentAssoc()" class="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs transition">
+            Save Note
           </button>
         </div>
       </div>
 
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- TAB 3: THE VERONA DUEL (ASSOCIATION & CONTEXT QUIZ) -->
-    <!-- ========================================================= -->
-    <section id="view-quiz" class="hidden space-y-6 max-w-3xl mx-auto">
-      
-      <!-- Quiz Header -->
-      <div class="bg-gradient-to-r from-rose-950/70 via-stone-900 to-amber-950/70 border border-amber-600/30 p-6 rounded-2xl flex items-center justify-between">
-        <div>
-          <span class="text-xs font-mono font-bold uppercase tracking-wider text-rose-400">The Capulet vs. Montague Challenge</span>
-          <h3 class="text-2xl font-serif font-bold text-white mt-0.5">The Verona Lexicon Duel</h3>
-          <p class="text-xs text-stone-300 mt-1">Test your ability to identify words by their associations and Shakespearean quotes.</p>
-        </div>
-        <div class="text-right">
-          <span class="text-[10px] font-mono uppercase text-stone-400 block">Score</span>
-          <span id="quiz-score" class="text-3xl font-serif font-black text-amber-400">0</span>
-        </div>
-      </div>
-
-      <!-- Quiz Card -->
-      <div class="bg-stone-900 border border-stone-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
-        <div class="flex items-center justify-between text-xs font-mono text-stone-400 border-b border-stone-800 pb-3">
-          <span id="quiz-progress">Question 1 of 10</span>
-          <span id="quiz-badge" class="px-2.5 py-0.5 rounded bg-amber-900/40 text-amber-300 border border-amber-700/50">Association Riddle</span>
-        </div>
-
-        <div class="space-y-3">
-          <h4 id="quiz-question" class="text-lg sm:text-xl font-renaissance text-stone-100 leading-snug">
-            Question prompt loading...
-          </h4>
-          <p id="quiz-subtext" class="text-xs font-sans text-stone-400 italic">
-            Select the matching Act 1 target word below.
-          </p>
-        </div>
-
-        <!-- Options Container -->
-        <div id="quiz-options-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-          <!-- Dynamically generated buttons -->
-        </div>
-
-        <!-- Feedback Notification -->
-        <div id="quiz-feedback" class="hidden p-4 rounded-xl text-xs sm:text-sm border flex items-start space-x-3">
-          <div id="quiz-feedback-icon" class="text-xl pt-0.5"></div>
-          <div class="space-y-1">
-            <span id="quiz-feedback-title" class="font-bold block"></span>
-            <p id="quiz-feedback-text" class="text-stone-300 leading-relaxed"></p>
-          </div>
-        </div>
-
-        <!-- Footer Next Button -->
-        <div class="flex justify-between items-center pt-4 border-t border-stone-800">
-          <button onclick="restartQuiz()" class="px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 text-xs font-semibold transition">
-            <i class="fa-solid fa-rotate-left mr-1"></i> Restart Duel
-          </button>
-          <button id="quiz-next-btn" onclick="nextQuizQuestion()" class="hidden px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition shadow-lg shadow-amber-600/30">
-            Next Challenge <i class="fa-solid fa-arrow-right ml-1"></i>
-          </button>
-        </div>
-      </div>
-
-    </section>
-
-
-    <!-- ========================================================= -->
-    <!-- TAB 4: ACT 1 HISTORICAL LINES VIEWER -->
-    <!-- ========================================================= -->
-    <section id="view-context" class="hidden space-y-6 max-w-4xl mx-auto">
-      <div class="bg-stone-900 border border-amber-900/60 p-6 rounded-2xl space-y-2">
-        <h3 class="text-xl font-serif font-bold text-amber-300">Shakespeare's Act 1 Thematic Archive</h3>
-        <p class="text-xs text-stone-400">
-          See how William Shakespeare utilized these exact vocabulary words across the scenes of Act I to construct tension, humor, romance, and tragedy.
-        </p>
-      </div>
-
-      <div class="space-y-4" id="scenes-container">
-        <!-- Injected via JavaScript -->
-      </div>
-    </section>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="border-t border-stone-900 bg-stone-950 py-8 text-center text-xs text-stone-500 font-mono">
-    <div class="max-w-7xl mx-auto px-4 space-y-2">
-      <p>Verona 1597: William Shakespeare's <em>Romeo & Juliet</em> Act 1 Vocabulary Codex</p>
-      <p class="text-[10px] text-stone-600">Designed with the 6-Step Word Association & Semantic Network Methodology</p>
+  <main id="view-duel" class="flex-grow max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full hidden">
+    
+    <div class="bg-stone-900 border border-amber-700/40 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-6">
+      
+      <!-- Quiz Header -->
+      <div class="flex items-center justify-between border-b border-stone-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase text-rose-400 font-bold tracking-widest block">Verona Street Duel</span>
+          <h2 class="text-2xl font-serif-title font-bold text-white">Act 1 Lexicon Challenge</h2>
+        </div>
+        <div class="text-right">
+          <span class="text-xs font-mono text-stone-400 block">Question</span>
+          <span id="duel-question-num" class="text-lg font-mono font-bold text-amber-400">1 / 10</span>
+        </div>
+      </div>
+
+      <!-- Question Prompt -->
+      <div id="duel-question-container" class="space-y-6">
+        <p id="duel-question-text" class="text-lg sm:text-xl font-renaissance text-stone-200 leading-relaxed italic">
+          <!-- Injected by JavaScript -->
+        </p>
+
+        <!-- Options Buttons -->
+        <div id="duel-options" class="grid grid-cols-1 gap-3">
+          <!-- Injected by JavaScript -->
+        </div>
+
+        <div id="duel-feedback" class="p-4 rounded-xl hidden text-sm font-medium"></div>
+      </div>
+
+      <!-- Duel Controls -->
+      <div class="flex justify-between items-center pt-4 border-t border-stone-800">
+        <span id="duel-score-display" class="text-xs font-mono text-stone-400">Score: 0 pts</span>
+        <button id="duel-next-btn" onclick="nextDuelQuestion()" class="hidden px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition">
+          Next Question <i class="fa-solid fa-arrow-right ml-1"></i>
+        </button>
+      </div>
+
     </div>
+
+  </main>
+
+  <main id="view-play" class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full hidden space-y-8">
+    
+    <div>
+      <span class="text-xs font-mono uppercase text-amber-500 font-bold tracking-widest block">Shakespearean Source Texts</span>
+      <h2 class="text-2xl sm:text-3xl font-serif-title font-bold text-white">Act 1 Dialogue Excerpts</h2>
+      <p class="text-xs text-stone-400 mt-1">Read how the 21 target words drive the prologue, public brawls, marriage politics, and Queen Mab's speech.</p>
+    </div>
+
+    <!-- Scene 1: The Prologue & The Street Brawl -->
+    <article class="p-6 sm:p-8 rounded-3xl bg-stone-900/80 border border-stone-800 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="px-3 py-1 rounded-full bg-rose-950 text-rose-300 font-mono text-xs border border-rose-800">The Prologue</span>
+        <span class="text-xs text-stone-500 font-mono">Chorus</span>
+      </div>
+      <blockquote class="font-renaissance italic text-lg sm:text-xl text-stone-200 leading-relaxed border-l-2 border-rose-500 pl-4">
+        "Two households, both alike in dignity,<br>
+        In fair Verona, where we lay our scene,<br>
+        From ancient grudge break to new mutiny,<br>
+        Where <strong class="text-amber-400 underline decoration-amber-500">civil</strong> blood makes <strong class="text-amber-400 underline decoration-amber-500">civil</strong> hands unclean."
+      </blockquote>
+      <p class="text-xs text-stone-400 leading-relaxed">
+        <strong>Context Analysis:</strong> Shakespeare uses the double meaning of <em>civil</em> (citizens of the same town vs. polite/peaceful behavior) to expose the tragic absurdity of citizen neighbors slaughtering each other.
+      </p>
+    </article>
+
+    <!-- Scene 2: Tybalt's Defiance -->
+    <article class="p-6 sm:p-8 rounded-3xl bg-stone-900/80 border border-stone-800 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="px-3 py-1 rounded-full bg-amber-950 text-amber-300 font-mono text-xs border border-amber-800">Act 1, Scene 1</span>
+        <span class="text-xs text-stone-500 font-mono">Tybalt confronts Benvolio</span>
+      </div>
+      <blockquote class="font-renaissance italic text-lg sm:text-xl text-stone-200 leading-relaxed border-l-2 border-amber-500 pl-4">
+        "What, drawn, and talk of peace? I hate the word,<br>
+        As I <strong class="text-amber-400 underline decoration-amber-500">hate</strong> hell, all Montagues, and thee.<br>
+        Have at thee, coward!"
+      </blockquote>
+      <p class="text-xs text-stone-400 leading-relaxed">
+        <strong>Context Analysis:</strong> Tybalt treats Benvolio as his sworn <em>adversary</em>, proving that the ancient feud has poisoned even the polite <em>manners</em> of Verona's young nobility.
+      </p>
+    </article>
+
+    <!-- Scene 3: Capulet's Feast & Paris's Proposal -->
+    <article class="p-6 sm:p-8 rounded-3xl bg-stone-900/80 border border-stone-800 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="px-3 py-1 rounded-full bg-emerald-950 text-emerald-300 font-mono text-xs border border-emerald-800">Act 1, Scene 2</span>
+        <span class="text-xs text-stone-500 font-mono">Lord Capulet to Paris</span>
+      </div>
+      <blockquote class="font-renaissance italic text-lg sm:text-xl text-stone-200 leading-relaxed border-l-2 border-emerald-500 pl-4">
+        "My will to her <strong class="text-amber-400 underline decoration-amber-500">consent</strong> is but a part;<br>
+        An she agree, within her scope of choice<br>
+        Lies my <strong class="text-amber-400 underline decoration-amber-500">consent</strong> and fair <strong class="text-amber-400 underline decoration-amber-500">according</strong> voice."
+      </blockquote>
+      <p class="text-xs text-stone-400 leading-relaxed">
+        <strong>Context Analysis:</strong> Capulet momentarily insists that Juliet's own <em>consent</em> is required for marriage, showing parental <em>merit</em> and care before later forcing the match.
+      </p>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-stone-950 border-t border-stone-900 py-6 text-center text-xs text-stone-500 font-mono">
+    Romeo & Juliet Act 1 Vocabulary & Word Association Studio • Educational Verona Codex
   </footer>
 
-  <!-- ========================================================= -->
-  <!-- COMPLETE VOCABULARY DATASET (21 WORDS FROM PRESENTATION) -->
-  <!-- ========================================================= -->
   <script>
     const vocabularyData = [
       {
         id: "civil",
         word: "civil / civilian",
-        pos: "[adj. / n.]",
-        category: "society",
-        def: "Related to ordinary citizens rather than the military; also polite, courteous, and respectful.",
-        forms: ["civilly (adv.)", "civility (n.)", "civilian (n.)"],
+        pos: "adj. / n.",
+        category: "authority",
+        scene: "Prologue, Scene 1",
+        def: "1. Related to ordinary citizens or society (not military). 2. Polite, courteous, and respectful.",
         assoc1: {
-          title: "Public Streets & Civil War",
-          desc: "Neighbors and citizens turning lethal weapons against each other in peaceful city piazzas."
+          title: "American Civil War & Uniforms (Slide 2)",
+          desc: "Citizens of the same country fighting against each other instead of living peacefully."
         },
         assoc2: {
-          title: "A Polite Bow at the Door",
-          desc: "Holding open a heavy door with courteous restraint to keep civic peace and avoid conflict."
+          title: "Polite Courtroom & Door Manners (Slide 2-3)",
+          desc: "Holding a heavy door open for a colleague with respectful, polished courtroom decorum."
         },
-        exampleRJ: "From ancient grudge break to new mutiny, where civil blood makes civil hands unclean. (Prologue, Line 4)",
-        exampleModern: "Despite their bitter rivalry in the courtroom, the two attorneys remained civil when greeting each other.",
-        scene: "Prologue / Street Brawl (Scene 1)"
+        exampleRJ: "Where civil blood makes civil hands unclean.",
+        exampleModern: "Even though the debate grew intense, both political leaders remained civil toward one another.",
+        family: ["civility (n)", "civilian (n)", "civilize (v)", "civilly (adv)"]
       },
       {
         id: "back",
-        word: "back (s.o.) / backing",
-        pos: "[v. / n.]",
-        category: "feud",
-        def: "To support, defend, or believe someone will succeed; physical or financial reinforcement.",
-        forms: ["backer (n.)", "backed (adj.)", "backing (n.)"],
+        word: "back / backing",
+        pos: "v. / n.",
+        category: "conflict",
+        scene: "Act 1, Scene 1",
+        def: "To support, defend, or finance someone; to believe someone will succeed.",
         assoc1: {
-          title: "Shield at Your Spine",
-          desc: "A loyal sword-brother standing directly behind your back so you cannot be blindsided in combat."
+          title: "Supporters with 'You Can Do It!' Signs (Slide 4)",
+          desc: "Enthusiastic fans holding high motivational banners behind their chosen champion."
         },
         assoc2: {
-          title: "Cheering Stadium Crowd",
-          desc: "Rallying supporters waving signs of 'You Can Do It!', roaring as their chosen racer sprints."
+          title: "Rallying Crowds at a Political Race (Slide 4)",
+          desc: "A roaring crowd waving blue campaign posters to fund and back their presidential candidate."
         },
-        exampleRJ: "Sampson: 'Draw thy tool! Here comes two of the house of the Montagues.' Gregory: 'No, marry; I fear thee.' Sampson: 'Fear me not.' Gregory: 'No, marry; I fear thee... I will back thee!' (Act 1, Scene 1)",
-        exampleModern: "The local community decided to back the young artist with full financial sponsorship for her gallery.",
-        scene: "Act 1, Scene 1 (Servants' Street Brawl)"
+        exampleRJ: "I will back thee. / How? Turn thy back and run?",
+        exampleModern: "The tech startup succeeded only because wealthy investors gave it substantial financial backing.",
+        family: ["backer (n)", "backing (n)", "backed (adj)"]
       },
       {
         id: "foe",
         word: "foe / adversary",
-        pos: "[n.]",
-        category: "feud",
+        pos: "n.",
+        category: "conflict",
+        scene: "Prologue, Scene 1",
         def: "An enemy or opponent in a fight, feud, contest, or war.",
-        forms: ["adversarial (adj.)", "foes (pl.)"],
         assoc1: {
-          title: "Clashing Boxing Gloves",
-          desc: "Two fierce heavyweight fighters trading pulverizing punches inside the ring until one falls."
+          title: "Heavyweight Boxers in the Ring (Slide 6)",
+          desc: "Fierce rivals trading punishing punches under arena spotlights with intense hostility."
         },
         assoc2: {
           title: "The Montague vs. Capulet Crests",
-          desc: "A rival family herald that instantly turns any stranger into a hated target on sight."
+          desc: "Two warring family flags clashing in Verona's streets where every servant is an enemy."
         },
-        exampleRJ: "Benvolio: 'Part, fools! Put up your swords; you know not what you do.' Tybalt: 'What, art thou drawn among these heartless hinds? Turn thee, Benvolio, look upon thy death!' (Act 1, Scene 1)",
+        exampleRJ: "A pair of star-crossed lovers take their life; whose misadventured piteous overthrows do with their death bury their parents' strife.",
         exampleModern: "In the championship chess match, she treated her adversary with deep strategic respect.",
-        scene: "Act 1, Scene 1 (Tybalt & Benvolio Clash)"
+        family: ["adversarial (adj)", "adversary (n)", "foe (n)"]
       },
       {
         id: "adversity",
         word: "adversity",
-        pos: "[n.]",
-        category: "feud",
-        def: "A difficult, harsh, or unpleasant situation filled with misfortune or obstacles.",
-        forms: ["adverse (adj.)", "adversely (adv.)"],
+        pos: "n.",
+        category: "conflict",
+        scene: "Act 1, Scene 1",
+        def: "A difficult, painful, or deeply unpleasant situation or circumstance.",
         assoc1: {
-          title: "The Stricken Athlete on the Grass",
-          desc: "A footballer clutching his knee in agony, facing months of grueling rehabilitation."
+          title: "Injured Footballer Clutching Ankle (Slide 5)",
+          desc: "A star athlete writhing in agony on the pitch after tearing ligaments in an important match."
         },
         assoc2: {
-          title: "A Ship in a Gale",
-          desc: "Battered wooden hulls tossed by relentless stormy seas, testing the crew's resolve to survive."
+          title: "A Laboratory Researcher with Mouse (Slide 5)",
+          desc: "Working relentlessly through failed medical trials and scientific adversity to discover a cure."
         },
-        exampleRJ: "Romeo feels weighed down by continuous adversity, viewing his unrequited love for Rosaline as a cruel torment that robs him of daylight.",
-        exampleModern: "She demonstrated incredible courage in the face of financial adversity, building a thriving business from scratch.",
-        scene: "Act 1, Scene 1 & Scene 4"
+        exampleRJ: "These happy masks that kiss fair ladies' brows, being black, put us in mind they hide the fair.",
+        exampleModern: "Nelson Mandela showed monumental resilience by triumphing over decades of imprisonment and racial adversity.",
+        family: ["adverse (adj)", "adversely (adv)"]
       },
       {
         id: "defy",
         word: "defy / defiance",
-        pos: "[v. / n.]",
-        category: "feud",
-        def: "To refuse to obey an authority, rule, or custom; to boldly challenge or resist.",
-        forms: ["defiant (adj.)", "defiantly (adv.)"],
+        pos: "v. / n.",
+        category: "conflict",
+        scene: "Act 1, Scene 1",
+        def: "To boldly refuse to obey an authority, law, or established social expectation.",
         assoc1: {
-          title: "Punk Rebel Sneering at the Law",
-          desc: "A spiked-jacket punk laughing in the face of authority, declaring independence from society's rules."
+          title: "Punk Rocker with Mohican & Police (Slide 7)",
+          desc: "A leather-clad rebel openly mocking an officer on the London sidewalk in pure defiance."
         },
         assoc2: {
-          title: "Romeo Crashing the Feast",
-          desc: "Masked Montagues boldly stepping through the gates of Lord Capulet's fortified palace uninvited."
+          title: "Romeo Crashing the Capulet Feast",
+          desc: "Entering the sworn enemy's mansion with a mask, defying the Prince's strict decree of death."
         },
-        exampleRJ: "Tybalt seethes with defiance when ordered to calm down: 'I will withdraw; but this intrusion shall, Now seeming sweet, convert to bitterest gall.' (Act 1, Scene 5)",
-        exampleModern: "The brave citizens took to the streets in open defiance of the unfair taxation laws.",
-        scene: "Act 1, Scene 5 (The Capulet Feast)"
+        exampleRJ: "I defy you, stars! (Romeo's defiant declaration against fate).",
+        exampleModern: "Rosa Parks committed a historic act of defiance when she refused to give up her seat on the segregated bus.",
+        family: ["defiant (adj)", "defiantly (adv)", "defiance (n)"]
       },
       {
         id: "grievance",
         word: "grievance",
-        pos: "[n.]",
-        category: "feud",
-        def: "A complaint, feeling of injustice, or grudge arising from unfair treatment.",
-        forms: ["grieve (v.)", "grievous (adj.)"],
+        pos: "n.",
+        category: "conflict",
+        scene: "Act 1, Scene 1",
+        def: "A formal complaint or deeply held grudge about unfair, unjust treatment.",
         assoc1: {
-          title: "Wrinkled List of Complaints",
-          desc: "An office worker thrusting a signed formal document of workplace abuses into management's hands."
+          title: "Office Worker Holding Formal Complaint (Slide 8)",
+          desc: "An employee standing before management with a typed letter detailing wage discrimination."
         },
         assoc2: {
-          title: "Generational Blood Grudge",
-          desc: "A century of insults, brawls, and ancestral slights that neither family is willing to forgive."
+          title: "The Ancient Verona Blood Feud",
+          desc: "Generations of unresolved murders and grievances between the Capulets and Montagues."
         },
-        exampleRJ: "Benvolio: 'See, where he comes: so please you, step aside; I'll know his grievance, or be much denied.' (Act 1, Scene 1)",
-        exampleModern: "The tenants filed a collective grievance against the landlord regarding the lack of winter heating.",
-        scene: "Act 1, Scene 1 (Romeo's Sorrow)"
+        exampleRJ: "See, where he comes: so please you, step aside; I'll know his grievance, or be much denied.",
+        exampleModern: "The trade union filed a formal grievance regarding hazardous conditions inside the chemical plant.",
+        family: ["grieve (v)", "grief (n)", "grievous (adj)"]
       },
       {
         id: "oppress",
-        word: "oppress / oppression / oppressive",
-        pos: "[v. / n. / adj.]",
-        category: "emotion",
-        def: "To keep someone in hardship through cruel authority; to weigh down heavily upon the spirit or chest.",
-        forms: ["oppressive (adj.)", "oppression (n.)", "oppressor (n.)"],
+        word: "oppress / oppression",
+        pos: "v. / n. / adj.",
+        category: "conflict",
+        scene: "Act 1, Scene 1",
+        def: "Prolonged cruel or unjust treatment by an authority; heavily weighing on the mind.",
         assoc1: {
-          title: "Giant Stone Fist Crushing a Figure",
-          desc: "A colossal totalitarian hand bearing down on a kneeling worker who cannot rise."
+          title: "Giant Hand Crushing Small Person (Slide 9)",
+          desc: "A massive graphical fist pressing a worker into the ground to symbolize totalitarian control."
         },
         assoc2: {
-          title: "Suffocating Heavy Velvet",
-          desc: "A thick, airless shroud draped over the heart that makes drawing a simple breath feel agonizing."
+          title: "Romeo's Heavy Heart for Rosaline",
+          desc: "Unreturned love weighing down his soul so intensely that his shoes feel made of lead."
         },
-        exampleRJ: "Romeo: 'Love is a smoke raised with the fume of sighs... Being purged, a fire sparkling in lovers' eyes; Being vex'd, a sea nourish'd with lovers' tears... Dost thou not laugh?' Benvolio: 'No, coz, I rather weep at thy good heart's oppression.' (Act 1, Scene 1)",
-        exampleModern: "Under the oppressive rules of the dictatorship, independent journalists were strictly silenced.",
-        scene: "Act 1, Scene 1 (Romeo Confesses to Benvolio)"
+        exampleRJ: "At thy good heart's oppression. / Why, gentle cousin, what grief hath Romeo?",
+        exampleModern: "Authoritarian regimes use digital surveillance and police force to oppress political dissidents.",
+        family: ["oppressive (adj)", "oppressor (n)", "oppressively (adv)"]
       },
       {
         id: "nourish",
-        word: "nourish / nourishment / nourishing",
-        pos: "[v. / n. / adj.]",
-        category: "emotion",
-        def: "To provide with food or substances necessary for life and growth; to foster or sustain a feeling.",
-        forms: ["nourishing (adj.)", "nourishment (n.)"],
+        word: "nourish / nourishment",
+        pos: "v. / n. / adj.",
+        category: "courtship",
+        scene: "Act 1, Scene 1",
+        def: "To provide substances, care, or support necessary for growth, health, and development.",
         assoc1: {
-          title: "The Brain-Power Food Plate",
-          desc: "Wholesome salmon, fresh greens, and almonds fueling neurons and physical vitality."
+          title: "Superfoods Feeding the Brain (Slide 10)",
+          desc: "Salmon, broccoli, nuts, and blueberries fueling neural pathways on a chalkboard diagram."
         },
         assoc2: {
-          title: "Feeding the Flames of Sorrow",
-          desc: "Romeo constantly meditating on his broken heart, using sorrowful poems to nourish his misery."
+          title: "A Golden Retriever at the Food Bowl (Slide 11)",
+          desc: "A healthy dog eating protein-packed kibble to nourish its muscles and shiny golden coat."
         },
-        exampleRJ: "Romeo describes love as: 'A sea nourish'd with loving tears: What is it else? a madness most discreet, A choking gall, and a preserving sweet.' (Act 1, Scene 1)",
-        exampleModern: "Good books and reflective conversations nourish the creative mind after exhausting days.",
-        scene: "Act 1, Scene 1"
+        exampleRJ: "Love is a smoke raised with the fume of sighs; being purged, a fire sparkling in lovers' eyes; being vexed, a sea nourished with lovers' tears.",
+        exampleModern: "Reading stimulating literature and discussing philosophy nourishes the teenage mind far more than scrolling.",
+        family: ["nourishing (adj)", "nourishment (n)", "malnourished (adj)"]
       },
       {
         id: "severe",
-        word: "severe / severely / severity",
-        pos: "[adj. / adv. / n.]",
-        category: "society",
-        def: "Very strict, harsh, or painful; extreme in degree for something undesirable.",
-        forms: ["severely (adv.)", "severity (n.)"],
+        word: "severe / severity",
+        pos: "adj. / n.",
+        category: "conflict",
+        scene: "Act 1, Scene 1",
+        def: "Extremely bad, harsh, or serious; causing great discomfort, penalty, or damage.",
         assoc1: {
-          title: "A Black Funnel Cloud on the Horizon",
-          desc: "An ominous roaring tornado twisting across skies, promising total destruction."
+          title: "Blistering Beach Sunburn with Sad Face (Slide 12)",
+          desc: "A tourist wincing in pain with a glowing red back and sunscreen shaped like a frown."
         },
         assoc2: {
-          title: "Blistering Red Sunburn",
-          desc: "Skin scorched raw by merciless sun, throbbing with sharp, unforgiving sting."
+          title: "A Dark Midwest Tornado Funnel (Slide 13)",
+          desc: "A violent black funnel cloud tearing through farmland under a stormy, ominous green sky."
         },
-        exampleRJ: "Prince Escalus issues a severe decree: 'If ever you disturb our streets again, Your lives shall pay the forfeit of the peace.' (Act 1, Scene 1)",
-        exampleModern: "The city council warned of severe penalties for anyone dumping toxic waste in the river.",
-        scene: "Act 1, Scene 1 (The Prince's Judgment)"
+        exampleRJ: "Your lives shall pay the forfeit of the peace (The Prince issuing the most severe penalty).",
+        exampleModern: "The city declared a state of emergency due to severe blizzards that knocked out power lines.",
+        family: ["severely (adv)", "severity (n)"]
       },
       {
         id: "merit",
         word: "merit",
-        pos: "[v. / n.]",
-        category: "power",
-        def: "To deserve praise or reward; intrinsic worth, excellence, or quality.",
-        forms: ["meritorious (adj.)", "merits (pl.)"],
+        pos: "v. / n.",
+        category: "authority",
+        scene: "Act 1, Scene 2",
+        def: "The quality of being particularly good, worthy, or deserving of praise and reward.",
         assoc1: {
-          title: "The First-Place Gold Trophy",
-          desc: "A gleaming cup hoisted high amidst cheers, awarded for true skill and hard-fought victory."
+          title: "Winners on Giant Golden Trophy (Slide 14)",
+          desc: "People celebrating with gift cards and certificates around an enormous #1 trophy."
         },
         assoc2: {
-          title: "Knight's Honor Medals",
-          desc: "Badges pinned to a soldier's chest earned by courageous deeds rather than noble birth."
+          title: "The Capulet Masked Ball Ladies",
+          desc: "Ladies whose beauty and noble character merit the highest praise in all of northern Italy."
         },
-        exampleRJ: "Capulet to Paris: 'Hear all, all see, And like her most whose merit most shall be: Amongst fresh female buds shall you tonight Behold at my poor house.' (Act 1, Scene 2)",
-        exampleModern: "The scholarship was awarded purely on academic merit rather than personal connections.",
-        scene: "Act 1, Scene 2 (Paris Asks for Juliet)"
+        exampleRJ: "Earth-treading stars that make dark heaven light... hear all, all see, and like her most whose merit most shall be.",
+        exampleModern: "University scholarships should be awarded strictly on academic merit rather than personal wealth.",
+        family: ["meritorious (adj)", "merited (adj)", "meritocracy (n)"]
       },
       {
         id: "bind",
         word: "bind / bound",
-        pos: "[v. / n. / adj.]",
-        category: "society",
-        def: "To tie, fasten, or secure firmly; (bound + inf.) certain to do something; morally or legally obligated.",
-        forms: ["bound (adj.)", "binding (adj.)"],
+        pos: "v. / n. / adj.",
+        category: "authority",
+        scene: "Act 1, Scene 2",
+        def: "1. To tie or fasten securely. 2. Legally or morally obligated (bound by law/destiny).",
         assoc1: {
-          title: "The White Steed Tethered to a Post",
-          desc: "A noble horse held fast by heavy knotted rope in winter snow, unable to wander."
+          title: "White Horse Tied to Winter Hitch (Slide 15)",
+          desc: "A snowy stallion safely tethered to a wooden fencepost with a thick braided rope."
         },
         assoc2: {
-          title: "Legal Oath Sealed in Crimson Wax",
-          desc: "A royal parchment binding two rival families under pain of death to keep the peace."
+          title: "Liverpool Footballers Lifting Cup (Slide 16)",
+          desc: "Athletes linked in triumphant brotherhood, bound by shared ambition and celebration."
         },
-        exampleRJ: "Capulet: 'Montague is bound as well as I, In penalty alike; and 'tis not hard, I think, For men so old as we to keep the peace.' (Act 1, Scene 2)",
-        exampleModern: "We are bound by our contracts to deliver the project before the winter deadline.",
-        scene: "Act 1, Scene 2"
+        exampleRJ: "For Montague is bound as well as I, in penalty alike; and 'tis not hard, I think, for men so old as we to keep the peace.",
+        exampleModern: "Doctors are legally bound by patient confidentiality and cannot disclose medical records.",
+        family: ["binding (adj)", "bound (adj)", "binder (n)"]
       },
       {
         id: "accord",
-        word: "accord / accordance / accordingly",
-        pos: "[v. / n. / adv.]",
-        category: "society",
-        def: "To be in harmony or agreement with; an official treaty; accordingly: therefore, in a matching way.",
-        forms: ["in accordance with (phrase)", "accordingly (adv.)"],
+        word: "accord / accordingly",
+        pos: "v. / n. / adv.",
+        category: "authority",
+        scene: "Act 1, Scene 2",
+        def: "Harmonious agreement, peace treaty; granting permission or acting in accordance with rules.",
         assoc1: {
-          title: "Signing a Historic Peace Treaty",
-          desc: "Diplomats exchanging signed red leather folders with smiles, agreeing to end hostility."
+          title: "Diplomats Signing International Treaty (Slide 17)",
+          desc: "Heads of state smiling and shaking hands over a red leather bound peace accord."
         },
         assoc2: {
-          title: "Voices in Musical Harmony",
-          desc: "Choir singers harmonizing perfectly on pitch without a single discordant screech."
+          title: "Paris Seeking Capulet's Agreement",
+          desc: "A wealthy young nobleman asking for Juliet's hand in full accordance with family customs."
         },
-        exampleRJ: "Capulet instructs Tybalt to restrain his temper at the feast in accord with the night's festivities, forbidding any violence.",
-        exampleModern: "The funds were distributed in accordance with the strict regulations outlined in the budget.",
-        scene: "Act 1, Scene 5"
+        exampleRJ: "An she agree, within her scope of choice lies my consent and fair according voice.",
+        exampleModern: "The company updated its cybersecurity protocols and instructed staff to act accordingly.",
+        family: ["accordance (n)", "accordingly (adv)", "according (prep)"]
       },
       {
         id: "inherit",
         word: "inherit / inheritance",
-        pos: "[v. / n.]",
-        category: "power",
-        def: "To receive money, land, or titles upon another's death; to receive biological traits from parents.",
-        forms: ["inheritor (n.)", "inherited (adj.)"],
+        pos: "v. / n.",
+        category: "courtship",
+        scene: "Act 1, Scene 2",
+        def: "To receive money, property, or biological physical traits from parents or ancestors.",
         assoc1: {
-          title: "A Model Estate Passed Between Hands",
-          desc: "A father passing the keys of a grand country mansion into the open palms of his child."
+          title: "Holding a Model House in Warm Hands (Slide 18)",
+          desc: "Parents passing a miniature home to a child to symbolize estate inheritance."
         },
         assoc2: {
-          title: "Mother & Daughter Identical Smiles",
-          desc: "The unmistakable DNA lineage shared between Cindy Crawford and Kaia Gerber."
+          title: "Cindy Crawford & Kaia Gerber DNA (Slide 19-20)",
+          desc: "Supermodel mother and daughter sharing identical cheekbones, smile, and radiant eyes."
         },
-        exampleRJ: "Capulet: 'Earth hath swallow'd all my hopes but she, She is the hopeful lady of my earth: But woo her, gentle Paris, get her heart...' (Act 1, Scene 2)",
-        exampleModern: "He did not just inherit his family's property; he also inherited his grandfather's stubborn resolve.",
-        scene: "Act 1, Scene 2 (Juliet's Fortune)"
+        exampleRJ: "Earth hath swallowed all my hopes but she; she is the hopeful lady of my earth (Juliet as sole inheritor).",
+        exampleModern: "She inherited her grandmother's Victorian jewelry collection and her sharp sense of humor.",
+        family: ["inheritance (n)", "hereditary (adj)", "inheritor (n)"]
       },
       {
         id: "obscure",
         word: "obscure",
-        pos: "[v. / adj.]",
-        category: "emotion",
-        def: "v: To conceal or hide; adj: Not easily discovered, seen, known, or understood.",
-        forms: ["obscurely (adv.)", "obscurity (n.)"],
+        pos: "v. / adj.",
+        category: "courtship",
+        scene: "Act 1, Scene 3",
+        def: "1. (verb) To conceal, hide, or darken. 2. (adj.) Not clear, mysterious, or little-known.",
         assoc1: {
-          title: "Total Solar Eclipse",
-          desc: "The dark moon gliding directly in front of the sun, hiding radiant gold in deep shadow."
+          title: "Solar Eclipse Ring of Fire (Slide 21)",
+          desc: "The dark silhouette of the moon completely obscuring the blinding light of the sun."
         },
         assoc2: {
-          title: "Dusty Forgotten Philosophy Tome",
-          desc: "An esoteric academic text read by only a handful of scholars worldwide."
+          title: "Rare French Philosophy & Obscure Bands (Slide 22)",
+          desc: "A dusty 1980s vinyl record known only to underground record collectors."
         },
-        exampleRJ: "Lady Capulet praises Paris: 'And what obscured in this fair volume lies Find written in the margent of his eyes.' (Act 1, Scene 3)",
-        exampleModern: "Thick sea fog obscured the harbor lighthouse, forcing ships to drop anchor.",
-        scene: "Act 1, Scene 3 (The Book of Paris)"
+        exampleRJ: "And what obscured in this fair volume lies, find written in the margent of his eyes.",
+        exampleModern: "Dense sea fog rolled in over the coastline, obscuring the lighthouse from incoming ships.",
+        family: ["obscurity (n)", "obscurely (adv)"]
       },
       {
         id: "consent",
         word: "consent",
-        pos: "[v. / n.]",
-        category: "society",
-        def: "To give permission or approval; an agreement to allow something to take place.",
-        forms: ["consenting (adj.)", "consented (v.)"],
+        pos: "v. / n.",
+        category: "courtship",
+        scene: "Act 1, Scene 2",
+        def: "Permission, agreement, or formal approval for something to happen.",
         assoc1: {
-          title: "Palm Raised: 'NO is NO'",
-          desc: "Clear, undeniable physical assertion of personal boundaries that must never be crossed."
+          title: "Hand Marked 'NO IS NO' (Slide 24)",
+          desc: "A firm open palm establishing clear boundaries that consent must always be mutual."
         },
         assoc2: {
-          title: "Father Giving Blessing for Marriage",
-          desc: "A lord granting his daughter freedom to agree before any betrothal is finalized."
+          title: "Lady Capulet Asking Juliet's Permission",
+          desc: "Discussing whether Juliet can look with favor upon Paris's handsome marriage proposal."
         },
-        exampleRJ: "Capulet: 'My will to her consent is but a part; An she agree, within her scope of choice Lies my consent and fair according voice.' (Act 1, Scene 2)",
-        exampleModern: "The doctor explained all risks thoroughly before asking the patient to sign the consent form.",
-        scene: "Act 1, Scene 2 (Capulet's Condition)"
+        exampleRJ: "My will to her consent is but a part; an she agree, within her scope of choice lies my consent.",
+        exampleModern: "Before any medical operation, the surgeon must receive signed informed consent from the patient.",
+        family: ["consensual (adj)", "consenting (adj)"]
       },
       {
-        id: "in_vain",
+        id: "vain",
         word: "(in) vain",
-        pos: "[adj. / coll.]",
-        category: "emotion",
-        def: "Unsuccessful, futile, pointless; producing no result; vain: conceited or overly proud.",
-        forms: ["vainly (adv.)", "vanity (n.)"],
+        pos: "adj. / coll.",
+        category: "conflict",
+        scene: "Act 1, Scene 1",
+        def: "1. Pointless, unsuccessful, producing no result. 2. Excessively conceited or obsessed with looks.",
         assoc1: {
-          title: "Bob Marley's 'Waiting in Vain'",
-          desc: "Standing alone on the porch beneath rain, longing for love that will never knock on the door."
+          title: "Bob Marley 'Waiting in Vain' Album (Slide 25)",
+          desc: "Singing sorrowfully about waiting for love that never arrives—pointless emotional waiting."
         },
         assoc2: {
-          title: "Pouring Water into a Sieve",
-          desc: "Frantic effort that drains away immediately through the mesh, leaving nothing behind."
+          title: "Benvolio Trying to Stop the Street Fight",
+          desc: "Swinging his sword in vain as fiery Tybalt ignores his pleas for peaceful civility."
         },
-        exampleRJ: "Romeo laments to Benvolio that all Cupid's arrows were sent in vain against Rosaline, for 'she'll not be hit with Cupid's arrow.' (Act 1, Scene 1)",
-        exampleModern: "The firefighters battled through the night, but their efforts to save the wooden barn were in vain.",
-        scene: "Act 1, Scene 1 (Romeo's Frustration)"
+        exampleRJ: "Part, fools! Put up your swords; you know not what you do... (Benvolio pleading in vain).",
+        exampleModern: "Rescue workers dug through the rubble in vain, finding only crushed stone and broken timber.",
+        family: ["vanity (n)", "vainly (adv)"]
       },
       {
         id: "manners",
         word: "manners",
-        pos: "[n.]",
-        category: "society",
-        def: "Polite and socially acceptable behavior; etiquette shown toward peers and hosts.",
-        forms: ["mannerly (adj.)", "ill-mannered (adj.)"],
+        pos: "n. pl.",
+        category: "authority",
+        scene: "Act 1, Scene 5",
+        def: "Polite, refined social behavior and etiquette toward other members of society.",
         assoc1: {
-          title: "Formal Bowing in Business",
-          desc: "Two executives bending at a respectful 45-degree angle in greeting before speaking."
+          title: "Japanese Businessmen Bowing Respectfully (Slide 27)",
+          desc: "Two executives bowing in formal business suits to demonstrate mutual honor and protocol."
         },
         assoc2: {
-          title: "Pulling Out a Dining Chair",
-          desc: "Gentlemanly dinner etiquette showing consideration for one's companion."
+          title: "Pulling Out Chair at Fine Dinner (Slide 28)",
+          desc: "A gentleman respectfully pulling out a seat at an upscale restaurant with cloth napkins."
         },
-        exampleRJ: "Capulet rebukes Tybalt's rudeness at the party: 'You are a saucy boy... Be quiet, or—More light, more light! For shame! I'll make you quiet... What, cheerly, my hearts!' (Act 1, Scene 5)",
-        exampleModern: "Table manners like chewing with your mouth closed reflect respect for your fellow diners.",
-        scene: "Act 1, Scene 5 (Party Etiquette)"
+        exampleRJ: "Content thee, gentle coz, let him alone; he bears him like a portly gentleman... (Capulet demanding good banquet manners).",
+        exampleModern: "Interrupting someone while they are explaining their viewpoint is considered bad manners in professional settings.",
+        family: ["mannerly (adj)", "ill-mannered (adj)"]
       },
       {
         id: "virtue",
         word: "virtue / virtuous",
-        pos: "[n. / adj.]",
-        category: "power",
-        def: "Showing high moral standards, righteousness, honor, and purity of conduct.",
-        forms: ["virtuously (adv.)", "virtues (pl.)"],
+        pos: "n. / adj.",
+        category: "authority",
+        scene: "Act 1, Scene 5",
+        def: "Behavior showing high moral standards, righteousness, purity, and integrity.",
         assoc1: {
-          title: "Classical Marble Column of Honor",
-          desc: "An unbending Roman pillar representing integrity, courage, and moral excellence."
+          title: "Word Cloud of Honor, Truth & Integrity (Slide 29)",
+          desc: "Bold white letters highlighting 'Ethics', 'Morality', 'Goodness', and 'Dignity'."
         },
         assoc2: {
-          title: "Word Cloud of Truth & Charity",
-          desc: "Honesty, temperance, and justice glowing as beacons in a corrupt world."
+          title: "Capulet Praising Young Romeo",
+          desc: "Verona's elders admitting that even their enemy's son has a reputation for virtue and gentleness."
         },
-        exampleRJ: "Capulet defends Romeo against Tybalt: 'Content thee, gentle coz, let him alone; He bears him like a portly gentleman; And, to say truth, Verona brags of him To be a virtuous and well-govern'd youth.' (Act 1, Scene 5)",
-        exampleModern: "Honesty in the face of temptation is the highest virtue of any public servant.",
-        scene: "Act 1, Scene 5 (Capulet Defends Romeo)"
+        exampleRJ: "Verona brags of him to be a virtuous and well-governed youth.",
+        exampleModern: "Patience and honesty are rare virtues in our fast-paced, high-pressure digital culture.",
+        family: ["virtuous (adj)", "virtuously (adv)"]
       },
       {
         id: "disparage",
         word: "disparage / disparaging",
-        pos: "[v. / adj.]",
-        category: "feud",
-        def: "To belittle, speak slightingly of, or express low esteem for someone or something.",
-        forms: ["disparagingly (adv.)", "disparagement (n.)"],
+        pos: "v. / adj.",
+        category: "conflict",
+        scene: "Act 1, Scene 5",
+        def: "To belittle, insult, or express a very low opinion of someone or something.",
         assoc1: {
-          title: "The Angry Man Pointing and Sneering",
-          desc: "Contemptuous finger-pointing designed to humiliate and demean an opponent's worth."
+          title: "Man Furiously Pointing Finger (Slide 30)",
+          desc: "An aggressive critic shouting insults and mocking someone's reputation in public."
         },
         assoc2: {
-          title: "Tearing an Artist's Work in Half",
-          desc: "Discarding someone's heartfelt masterpiece as if it were worthless scrap paper."
+          title: "Tybalt Despising Romeo at the Feast",
+          desc: "Threatening to attack Romeo because he believes Romeo came only to disparage the Capulets."
         },
-        exampleRJ: "Capulet warns Tybalt not to disparage his feast by causing a riot: 'I would not for the wealth of all the town Here in my house do him disparagement: Therefore be patient, take no note of him.' (Act 1, Scene 5)",
-        exampleModern: "It is unprofessional to disparage competing companies during an advertising pitch.",
-        scene: "Act 1, Scene 5 (Capulet's Order to Tybalt)"
+        exampleRJ: "I would not for the wealth of all this town here in my house do him disparagement.",
+        exampleModern: "The movie critic unfairly disparaged the young director's debut film before it even hit theaters.",
+        family: ["disparagement (n)", "disparagingly (adv)"]
       },
       {
         id: "intrude",
         word: "intrude / intrusion",
-        pos: "[v. / n.]",
-        category: "feud",
-        def: "To enter a place or situation where one is unwelcome or without invitation or permission.",
-        forms: ["intruder (n.)", "intrusive (adj.)"],
+        pos: "v. / n.",
+        category: "conflict",
+        scene: "Act 1, Scene 5",
+        def: "To enter a place, situation, or conversation without permission or welcome.",
         assoc1: {
-          title: "Grabbing the Stage Microphone",
-          desc: "Kanye West interrupting Taylor Swift's acceptance speech uninvited on live television."
+          title: "Man Squeezing Through Keyhole (Slide 31)",
+          desc: "A burglar awkwardly creeping through a locked keyhole into a private chamber."
         },
         assoc2: {
-          title: "Squeezing Through a Locked Keyhole",
-          desc: "Creeping past boundaries into a private chamber where warning signs are posted."
+          title: "Kanye West Grabbing Taylor Swift's Mic (Slide 32)",
+          desc: "Jumping onto the awards stage uninvited and disrupting an acceptance speech on live TV."
         },
-        exampleRJ: "Tybalt on hearing Romeo's voice: 'This, by his voice, should be a Montague... Now, by the stock and honour of my kin, To strike him dead I hold it not a sin... I will withdraw; but this intrusion shall convert to bitterest gall.' (Act 1, Scene 5)",
-        exampleModern: "The paparazzi intruded on the grieving family's private estate without consent.",
-        scene: "Act 1, Scene 5 (Tybalt Spots Romeo)"
+        exampleRJ: "It fits, when such a villain is a guest: I'll not endure him... to fleer and scorn at our solemnity.",
+        exampleModern: "Paparazzi drones intruded on the celebrity couple's private backyard wedding ceremony.",
+        family: ["intruder (n)", "intrusive (adj)", "intrusion (n)"]
       },
       {
         id: "loathe",
         word: "loathe / loathsome",
-        pos: "[v. / adj.]",
-        category: "feud",
-        def: "To feel intense hatred, disgust, or abhorrence toward someone or something; loathsome: disgusting.",
-        forms: ["loathing (n.)", "loathsomely (adv.)"],
+        pos: "v. / adj.",
+        category: "conflict",
+        scene: "Act 1, Scene 5",
+        def: "To feel intense hatred, revulsion, or deep disgust toward someone or something.",
         assoc1: {
-          title: "Knuckles Inscribed with 'HATE'",
-          desc: "Raw, clenched fists bearing tattooed letters of permanent venom against the world."
+          title: "Fist with 'HATE' Tattooed on Knuckles (Slide 33)",
+          desc: "A clenched, bruised fist displaying black inked letters of pure hatred and loathing."
         },
         assoc2: {
-          title: "The Stench of Rotting Garbage",
-          desc: "A repulsive, sickening decay that forces you to recoil and cover your face in disgust."
+          title: "Juliet's Discovery of Romeo's Family",
+          desc: "Realizing with horror that she has fallen in love with the son of the family she was taught to loathe."
         },
-        exampleRJ: "Juliet discovers Romeo's identity: 'My only love sprung from my only hate! Too early seen unknown, and known too late! Prodigious birth of love it is to me, That I must love a loathed enemy.' (Act 1, Scene 5)",
-        exampleModern: "He loathed the taste of bitter medication, but drank it faithfully to recover.",
-        scene: "Act 1, Scene 5 (Juliet's Discovery)"
-      }
-    ];
-
-    // Quiz Questions Data (10 Targeted Challenges)
-    const quizQuestions = [
-      {
-        question: "Which word is associated with 'holding open a door for a stranger' and 'citizens brawling in the streets of Verona'?",
-        subtext: "Think about the opening lines of the Prologue and civil conduct.",
-        options: ["Civil", "Vain", "Adversity", "Disparage"],
-        correct: 0,
-        explanation: "'Civil' can mean polite and courteous citizen behavior, but also refers to internal public conflict ('where civil blood makes civil hands unclean')."
-      },
-      {
-        question: "Tybalt draws his sword against Benvolio, calling him his hated opponent. What is the vocabulary word?",
-        subtext: "Associated with boxers exchanging punches in the ring.",
-        options: ["Adversary / Foe", "Inherit", "Nourish", "Manners"],
-        correct: 0,
-        explanation: "An 'adversary' or 'foe' is an enemy or combatant in a fight or generational feud."
-      },
-      {
-        question: "When Kanye West jumped onto the VMA stage and took Taylor Swift's microphone, what action did he commit?",
-        subtext: "Entering without invitation or permission.",
-        options: ["Intrude / Intrusion", "Consent", "Accord", "Bind"],
-        correct: 0,
-        explanation: "To 'intrude' means to trespass or enter a space where you are uninvited, exactly as Romeo did at the Capulet feast."
-      },
-      {
-        question: "Lord Capulet says Paris may only marry Juliet if Juliet gives her personal approval. Which word fits?",
-        subtext: "Represented by a palm raised saying 'NO is NO' or signing an agreement.",
-        options: ["Consent", "Grievance", "Oppress", "Obscure"],
-        correct: 0,
-        explanation: "'Consent' means formal approval or permission. Capulet insists his consent depends on Juliet's choice."
-      },
-      {
-        question: "Bob Marley's iconic song 'Waiting in ____' reflects effort that yields no result or hope. Which phrase is it?",
-        subtext: "Pointless, futile, or unsuccessful.",
-        options: ["In Vain", "In Defiance", "In Accord", "In Grievance"],
-        correct: 0,
-        explanation: "'In vain' means without success or completely pointless, as when Romeo laments his futile pursuit of Rosaline."
-      },
-      {
-        question: "What word describes Lord Capulet forbidding Tybalt from 'speaking slightingly of' or 'belittling' Romeo at the banquet?",
-        subtext: "Associated with an angry man pointing a finger and scowling.",
-        options: ["Disparage / Disparagement", "Nourish", "Inherit", "Obscure"],
-        correct: 0,
-        explanation: "'Disparage' means to belittle or express a low opinion of someone. Capulet refuses to do Romeo disparagement in his own hall."
-      },
-      {
-        question: "When a solar eclipse blocks out the golden rays of the sun, the light is made:",
-        subtext: "Concealed, hidden, or difficult to see and understand.",
-        options: ["Obscure", "Severe", "Virtuous", "Civil"],
-        correct: 0,
-        explanation: "To 'obscure' means to hide from view or make dark and unclear, just as the eclipse conceals the sun."
-      },
-      {
-        question: "Juliet cries out: 'That I must love a ____ enemy!' upon learning Romeo is a Montague.",
-        subtext: "Deeply hated, repulsive, and abhorred.",
-        options: ["Loathed / Loathsome", "Nourished", "Bound", "Civil"],
-        correct: 0,
-        explanation: "'Loathed' means intensely hated and detested with visceral disgust."
-      },
-      {
-        question: "Kaia Gerber receiving her mother Cindy Crawford's iconic facial features and modeling career is an example of:",
-        subtext: "Receiving property, traits, or lineage from parents.",
-        options: ["Inherit / Inheritance", "Defy", "Oppress", "Grievance"],
-        correct: 0,
-        explanation: "To 'inherit' means to receive genetic traits, wealth, or title from parents or ancestors."
-      },
-      {
-        question: "Capulet praises Romeo to Tybalt, remarking that Verona brags of him to be a youth of high moral goodness:",
-        subtext: "Represented by classical marble pillars of honor and integrity.",
-        options: ["Virtue / Virtuous", "Severe", "Adversity", "Foe"],
-        correct: 0,
-        explanation: "'Virtue' represents moral excellence, uprightness, and honor. Capulet acknowledges Romeo's virtuous reputation."
-      }
-    ];
-
-    // Act 1 Line Archive Data
-    const act1Scenes = [
-      {
-        act: "Act 1, Prologue",
-        title: "The Ancient Grudge of Verona",
-        quote: "Two households, both alike in dignity, In fair Verona, where we lay our scene, From ancient grudge break to new mutiny, Where civil blood makes civil hands unclean. From forth the fatal loins of these two foes A pair of star-cross'd lovers take their life...",
-        targets: ["civil", "foe"]
-      },
-      {
-        act: "Act 1, Scene 1",
-        title: "The Street Brawl & Romeo's Oppression",
-        quote: "Gregory: 'I will back thee!' ... Tybalt: 'What, drawn, and talk of peace? I hate the word, as I hate hell, all Montagues, and thee.' ... Prince: 'Three civil brawls, bred of an airy word, By thee, old Capulet, and Montague, Have thrice disturb'd the quiet of our streets... If ever you disturb our streets again, Your lives shall pay the forfeit of the peace.' ... Romeo: 'Being vex'd, a sea nourish'd with lovers' tears... griefs of mine own lie heavy in my breast, which thou wilt propagate, to have it prest with more of thine: this love that thou hast shown doth add more grief to too much of mine own. Love is a smoke...'",
-        targets: ["back", "foe", "adversary", "severe", "oppress", "nourish", "grievance", "in_vain"]
-      },
-      {
-        act: "Act 1, Scene 2",
-        title: "Paris Seeks Juliet's Hand",
-        quote: "Capulet: 'Montague is bound as well as I, In penalty alike... But saying o'er what I have said before: My child is yet a stranger in the world; She hath not seen the change of fourteen years... Earth hath swallow'd all my hopes but she, She is the hopeful lady of my earth: But woo her, gentle Paris, get her heart, My will to her consent is but a part... Hear all, all see, And like her most whose merit most shall be...'",
-        targets: ["bind", "consent", "merit", "inherit"]
-      },
-      {
-        act: "Act 1, Scene 3",
-        title: "Lady Capulet's Metaphor of Paris",
-        quote: "Lady Capulet: 'Read o'er the volume of young Paris' face, And find delight writ there with beauty's pen... And what obscured in this fair volume lies Find written in the margent of his eyes. This precious book of love, this unbound lover, To beautify him, only lacks a cover...'",
-        targets: ["obscure", "bind"]
-      },
-      {
-        act: "Act 1, Scene 5",
-        title: "The Capulet Masquerade Banquet",
-        quote: "Tybalt: 'This, by his voice, should be a Montague. Fetch me my rapier, boy. What dares the slave Come hither, cover'd with an antic face, To fleer and scorn at our solemnity? Now, by the stock and honour of my kin, To strike him dead, I hold it not a sin.' ... Capulet: 'He bears him like a portly gentleman; And, to say truth, Verona brags of him To be a virtuous and well-govern'd youth: I would not for the wealth of all the town Here in my house do him disparagement: Therefore be patient, take no note of him... It is my will, the which if thou respect, Show a fair presence and put off these frowns, An ill-beseeming semblance for a feast.' ... Tybalt: 'I will withdraw; but this intrusion shall Now seeming sweet convert to bitterest gall.' ... Juliet: 'My only love sprung from my only hate! Too early seen unknown, and known too late! Prodigious birth of love it is to me, That I must love a loathed enemy.'",
-        targets: ["intrude", "disparage", "virtue", "manners", "accord", "defy", "loathe"]
+        exampleRJ: "My only love sprung from my only hate! Too early seen unknown, and known too late! Prodigious birth of love it is to me, that I must love a loathed enemy.",
+        exampleModern: "She loathes public corruption and dedicated her career to investigative journalism.",
+        family: ["loathsome (adj)", "loathing (n)"]
       }
     ];
 
     // =========================================================
-    // APPLICATION STATE & CONTROLLERS
     // =========================================================
-    let currentDeckIndex = 0;
-    let cardIsFlipped = false;
-    let currentQuizIndex = 0;
-    let quizScore = 0;
-    let quizAnswerSelected = false;
-    let currentCategoryFilter = 'all';
-
-    // Audio SFX using Web Audio API (Zero external MP3 dependencies)
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
     let audioCtx = null;
-
-    function initAudio() {
-      if (!audioCtx) audioCtx = new AudioCtx();
-    }
 
     function playTone(type) {
       try {
-        initAudio();
+        if (!audioCtx) audioCtx = new AudioContext();
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.connect(gain);
         gain.connect(audioCtx.destination);
 
-        if (type === 'success') {
+        const now = audioCtx.currentTime;
+        if (type === 'click') {
           osc.type = 'triangle';
-          osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
-          osc.frequency.exponentialRampToValueAtTime(659.25, audioCtx.currentTime + 0.12); // E5
-          gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-          osc.start();
-          osc.stop(audioCtx.currentTime + 0.3);
-        } else if (type === 'error') {
-          osc.type = 'sawtooth';
-          osc.frequency.setValueAtTime(220, audioCtx.currentTime);
-          osc.frequency.linearRampToValueAtTime(130, audioCtx.currentTime + 0.25);
-          gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
-          osc.start();
-          osc.stop(audioCtx.currentTime + 0.25);
-        } else if (type === 'click') {
+          osc.frequency.setValueAtTime(320, now);
+          osc.frequency.exponentialRampToValueAtTime(540, now + 0.08);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.linearRampToValueAtTime(0.01, now + 0.08);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        } else if (type === 'correct') {
           osc.type = 'sine';
-          osc.frequency.setValueAtTime(440, audioCtx.currentTime);
-          gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
-          osc.start();
-          osc.stop(audioCtx.currentTime + 0.05);
+          osc.frequency.setValueAtTime(523.25, now); // C5
+          osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+          osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+          gain.gain.setValueAtTime(0.18, now);
+          gain.gain.linearRampToValueAtTime(0.01, now + 0.35);
+          osc.start(now);
+          osc.stop(now + 0.35);
+        } else if (type === 'wrong') {
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(220, now);
+          osc.frequency.setValueAtTime(180, now + 0.15);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.linearRampToValueAtTime(0.01, now + 0.3);
+          osc.start(now);
+          osc.stop(now + 0.3);
         }
-      } catch (e) {}
+      } catch (e) {
+        // AudioContext fallback
+      }
     }
 
-    // Text to Speech
+    // Speech Synthesis for English pronunciation
     function speakText(text) {
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.rate = 0.9;
-        utterance.lang = 'en-GB';
+        utterance.pitch = 1.0;
         window.speechSynthesis.speak(utterance);
       }
     }
 
-    // Navigation Switcher
-    function switchTab(tabId) {
-      playTone('click');
-      document.querySelectorAll('main > section').forEach(sec => sec.classList.add('hidden'));
-      document.getElementById(`view-${tabId}`).classList.remove('hidden');
-
-      // Update button styling
-      ['lexicon', 'flashcards', 'quiz', 'context'].forEach(id => {
-        const btn = document.getElementById(`tab-btn-${id}`);
-        if (id === tabId) {
-          btn.className = "px-3 sm:px-4 py-2 rounded-xl transition bg-amber-600 text-white shadow-md flex items-center gap-2";
-        } else {
-          btn.className = "px-3 sm:px-4 py-2 rounded-xl text-stone-400 hover:text-white hover:bg-stone-800 transition flex items-center gap-2";
-        }
-      });
-
-      if (tabId === 'flashcards') {
-        renderFlashcard();
-      }
-      if (tabId === 'quiz' && currentQuizIndex === 0 && quizScore === 0) {
-        loadQuizQuestion();
-      }
-    }
-
-    // =========================================================
-    // TAB 1: LEXICON RENDERER & FILTER
-    // =========================================================
+    // Helper: Category badge styling
     function getCategoryBadge(cat) {
-      switch(cat) {
-        case 'feud': return '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-950 text-rose-300 border border-rose-800/80">Feud & Conflict</span>';
-        case 'society': return '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-stone-800 text-stone-300 border border-stone-700">Civic Duty & Law</span>';
-        case 'emotion': return '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-950 text-amber-300 border border-amber-800/80">Love & Emotion</span>';
-        case 'power': return '<span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-950 text-emerald-300 border border-emerald-800/80">Virtue & Status</span>';
-        default: return '';
+      if (cat === 'conflict') {
+        return `<span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-rose-950/90 text-rose-300 border border-rose-800"><i class="fa-solid fa-swords mr-1"></i> Conflict & Feud</span>`;
+      } else if (cat === 'courtship') {
+        return `<span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-amber-950/90 text-amber-300 border border-amber-800"><i class="fa-solid fa-heart mr-1"></i> Love & Kinship</span>`;
+      } else {
+        return `<span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-950/90 text-emerald-300 border border-emerald-800"><i class="fa-solid fa-scale-balanced mr-1"></i> Honor & Law</span>`;
       }
     }
 
-    function renderLexiconCards(filter = 'all', query = '') {
+    // =========================================================
+    // =========================================================
+    let selectedCategory = 'all';
+
+    function filterCategory(cat) {
+      playTone('click');
+      selectedCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.classList.remove('bg-amber-600', 'text-white');
+        btn.classList.add('bg-stone-800', 'text-stone-400');
+      });
+      event.target.classList.add('bg-amber-600', 'text-white');
+      event.target.classList.remove('bg-stone-800', 'text-stone-400');
+      renderLexiconGrid();
+    }
+
+    function renderLexiconGrid() {
       const grid = document.getElementById('lexicon-grid');
-      grid.innerHTML = '';
+      const search = (document.getElementById('lexicon-search').value || '').toLowerCase().trim();
 
       const filtered = vocabularyData.filter(item => {
-        const matchCat = filter === 'all' || item.category === filter;
-        const q = query.toLowerCase().trim();
-        const matchQuery = !q || 
-          item.word.toLowerCase().includes(q) || 
-          item.def.toLowerCase().includes(q) || 
-          item.assoc1.title.toLowerCase().includes(q) || 
-          item.assoc2.title.toLowerCase().includes(q) || 
-          item.exampleRJ.toLowerCase().includes(q) ||
-          item.exampleModern.toLowerCase().includes(q);
-        return matchCat && matchQuery;
+        const matchesCategory = selectedCategory === 'all' || item.category === selectedCategory;
+        const matchesSearch = 
+          item.word.toLowerCase().includes(search) || 
+          item.def.toLowerCase().includes(search) ||
+          item.assoc1.title.toLowerCase().includes(search) ||
+          item.assoc2.title.toLowerCase().includes(search);
+        return matchesCategory && matchesSearch;
       });
 
       if (filtered.length === 0) {
         grid.innerHTML = `
-          <div class="col-span-full py-16 text-center text-stone-500 font-renaissance text-lg">
-            <i class="fa-solid fa-scroll text-3xl mb-3 text-stone-600 block"></i>
-            No matching Elizabethan words found in Verona's registry.
+          <div class="col-span-full py-16 text-center text-stone-500">
+            <i class="fa-solid fa-scroll text-4xl mb-3 text-stone-700"></i>
+            <p class="font-renaissance text-lg">No Shakespearean terms match thy query.</p>
           </div>
         `;
         return;
       }
 
-      filtered.forEach((item, index) => {
-        const studentNote = localStorage.getItem(`rj_assoc_${item.id}`) || '';
-
-        const card = document.createElement('article');
-        card.className = "bg-stone-900 border border-stone-800 hover:border-amber-600/50 rounded-2xl p-6 shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 group";
-        
-        card.innerHTML = `
-          <div class="space-y-4">
-            <!-- Header row -->
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                ${getCategoryBadge(item.category)}
-                <div class="flex items-center gap-2 mt-2">
-                  <h3 class="text-xl font-serif font-bold text-white group-hover:text-amber-400 transition leading-snug">${item.word}</h3>
-                  <button onclick="speakText('${item.word.split('/')[0].trim()}')" title="Pronounce Word" class="w-7 h-7 rounded-lg bg-stone-800 hover:bg-amber-600 text-stone-400 hover:text-white transition flex items-center justify-center text-xs">
-                    <i class="fa-solid fa-volume-high"></i>
-                  </button>
-                </div>
-                <span class="text-[11px] font-mono text-stone-400 block">${item.pos}</span>
-              </div>
-              <span class="text-[10px] font-mono px-2 py-1 rounded bg-stone-950 text-stone-500 border border-stone-800 shrink-0">#${index + 1}</span>
+      grid.innerHTML = filtered.map(item => `
+        <div class="bg-stone-900/90 border border-stone-800 hover:border-amber-700/60 rounded-3xl p-6 shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+          
+          <div>
+            <!-- Header: Category & Scene -->
+            <div class="flex items-center justify-between mb-3">
+              ${getCategoryBadge(item.category)}
+              <span class="text-[11px] font-mono text-stone-500">${item.scene}</span>
             </div>
+
+            <!-- Word & Pronounce -->
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-amber-100 group-hover:text-amber-400 transition">
+                ${item.word}
+              </h3>
+              <button onclick="speakText('${item.word.split('/')[0].trim()}')" title="Pronounce Word" class="w-8 h-8 rounded-full bg-stone-800 hover:bg-amber-600 text-stone-300 hover:text-white transition flex items-center justify-center text-xs">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+            </div>
+            <span class="text-[11px] font-mono text-stone-400 uppercase tracking-widest block mb-4">${item.pos}</span>
 
             <!-- Definition -->
-            <p class="text-xs sm:text-sm text-stone-300 font-sans leading-relaxed border-b border-stone-800/80 pb-3">
-              <strong class="text-amber-400 font-serif">Definition:</strong> ${item.def}
+            <p class="text-xs sm:text-sm text-stone-300 leading-relaxed mb-5">
+              ${item.def}
             </p>
 
-            <!-- WORD ASSOCIATIONS (At least 2 required) -->
-            <div class="space-y-2 bg-stone-950/80 p-3.5 rounded-xl border border-stone-800">
-              <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
-                <i class="fa-solid fa-link text-amber-500"></i> Word Associations (Mental Anchors)
-              </span>
-              
-              <div class="space-y-2 text-xs">
-                <div class="bg-stone-900/90 p-2.5 rounded-lg border border-stone-800/80">
-                  <strong class="text-rose-400 font-serif block text-[11px]"><i class="fa-solid fa-eye mr-1"></i> Anchor 1: ${item.assoc1.title}</strong>
-                  <span class="text-stone-300 text-[11px] leading-relaxed block mt-0.5">${item.assoc1.desc}</span>
-                </div>
-                <div class="bg-stone-900/90 p-2.5 rounded-lg border border-stone-800/80">
-                  <strong class="text-amber-300 font-serif block text-[11px]"><i class="fa-solid fa-brain mr-1"></i> Anchor 2: ${item.assoc2.title}</strong>
-                  <span class="text-stone-300 text-[11px] leading-relaxed block mt-0.5">${item.assoc2.desc}</span>
-                </div>
+            <!-- Dual Word Association Anchors (From Slides) -->
+            <div class="space-y-2.5 mb-5 pt-3 border-t border-stone-800/80">
+              <div class="p-2.5 rounded-xl bg-stone-950 border border-stone-800">
+                <span class="text-[10px] uppercase font-mono font-bold text-rose-400 block mb-0.5">
+                  <i class="fa-solid fa-link mr-1"></i> Association 1: ${item.assoc1.title}
+                </span>
+                <p class="text-xs text-stone-300 leading-relaxed">${item.assoc1.desc}</p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-stone-950 border border-stone-800">
+                <span class="text-[10px] uppercase font-mono font-bold text-amber-400 block mb-0.5">
+                  <i class="fa-solid fa-link mr-1"></i> Association 2: ${item.assoc2.title}
+                </span>
+                <p class="text-xs text-stone-300 leading-relaxed">${item.assoc2.desc}</p>
               </div>
             </div>
 
-            <!-- EXAMPLE SENTENCES (At least 2 required: Shakespeare + Modern) -->
-            <div class="space-y-2 text-xs">
-              <div class="p-3 bg-gradient-to-r from-rose-950/30 to-stone-900 rounded-xl border-l-2 border-rose-600">
-                <span class="text-[10px] font-mono uppercase font-bold text-rose-400 block tracking-wider"><i class="fa-solid fa-masks-theater mr-1"></i> Shakespearean Context (Act 1):</span>
-                <p class="font-renaissance italic text-stone-200 mt-1 leading-snug">"${item.exampleRJ}"</p>
+            <!-- Collapsible Context Examples (Shakespeare + Modern) -->
+            <details class="bg-stone-950/80 rounded-xl border border-stone-800 p-3 text-xs group/dt">
+              <summary class="cursor-pointer font-mono font-semibold text-amber-400 select-none flex items-center justify-between text-[11px]">
+                <span><i class="fa-solid fa-quote-left mr-1.5"></i> Dual Examples (Act 1 + Modern)</span>
+                <i class="fa-solid fa-chevron-down text-stone-500 group-open/dt:rotate-180 transition-transform"></i>
+              </summary>
+              <div class="mt-3 space-y-3 pt-2 border-t border-stone-800">
+                <div class="border-l-2 border-rose-500 pl-2.5 py-0.5">
+                  <strong class="text-[10px] uppercase font-mono text-rose-400 block">Romeo & Juliet Context:</strong>
+                  <p class="font-renaissance italic text-stone-200 mt-0.5 text-sm">"${item.exampleRJ}"</p>
+                </div>
+                <div class="border-l-2 border-amber-500 pl-2.5 py-0.5">
+                  <strong class="text-[10px] uppercase font-mono text-amber-400 block">Modern B2 Sentence:</strong>
+                  <p class="text-stone-300 mt-0.5">${item.exampleModern}</p>
+                </div>
               </div>
-              <div class="p-3 bg-stone-950 rounded-xl border-l-2 border-amber-600">
-                <span class="text-[10px] font-mono uppercase font-bold text-amber-400 block tracking-wider"><i class="fa-solid fa-globe mr-1"></i> Modern Application:</span>
-                <p class="text-stone-300 mt-1 leading-snug">"${item.exampleModern}"</p>
-              </div>
-            </div>
-
-            <!-- Student Saved Note Display (if exists) -->
-            ${studentNote ? `
-              <div class="p-2.5 bg-indigo-950/40 border border-indigo-700/50 rounded-lg text-xs text-indigo-200">
-                <strong class="block text-[10px] font-mono uppercase tracking-wider text-indigo-400"><i class="fa-solid fa-bookmark mr-1"></i> Your Saved Association:</strong>
-                "${studentNote}"
-              </div>
-            ` : ''}
-
+            </details>
           </div>
 
-          <!-- Card Footer (Forms) -->
-          <div class="pt-4 mt-4 border-t border-stone-800/80 flex items-center justify-between text-[11px] text-stone-400 font-mono">
-            <span>Forms: ${item.forms.join(', ')}</span>
-            <button onclick="studyWordInDeck('${item.id}')" class="text-amber-400 hover:text-amber-300 font-bold transition">Flashcard →</button>
+          <!-- Word Family Footer Tokens -->
+          <div class="mt-5 pt-3 border-t border-stone-800 flex flex-wrap gap-1.5">
+            ${item.family.map(tok => `<span class="px-2 py-0.5 bg-stone-950 text-stone-400 rounded-md text-[10px] font-mono border border-stone-800">${tok}</span>`).join('')}
           </div>
-        </article>
-        `;
-        grid.appendChild(card);
-      });
 
-      updateSavedCount();
-    }
-
-    function filterLexicon() {
-      const query = document.getElementById('lexicon-search').value;
-      renderLexiconCards(currentCategoryFilter, query);
-    }
-
-    function setCategoryFilter(cat) {
-      playTone('click');
-      currentCategoryFilter = cat;
-      document.querySelectorAll('.cat-pill').forEach(btn => {
-        if (btn.dataset.category === cat) {
-          btn.className = "cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-amber-600 text-white transition shrink-0";
-        } else {
-          btn.className = "cat-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-stone-800 text-stone-400 hover:text-white transition shrink-0";
-        }
-      });
-      filterLexicon();
-    }
-
-    function studyWordInDeck(wordId) {
-      const idx = vocabularyData.findIndex(w => w.id === wordId);
-      if (idx !== -1) {
-        currentDeckIndex = idx;
-        switchTab('flashcards');
-      }
-    }
-
-    function updateSavedCount() {
-      let count = 0;
-      vocabularyData.forEach(w => {
-        if (localStorage.getItem(`rj_assoc_${w.id}`)) count++;
-      });
-      const el = document.getElementById('saved-notes-count');
-      if (el) el.textContent = count;
+        </div>
+      `).join('');
     }
 
     // =========================================================
-    // TAB 2: FLASHCARD DECK ENGINE
     // =========================================================
+    let currentDeckIndex = 0;
+    let cardIsFlipped = false;
+
     function renderFlashcard() {
       const item = vocabularyData[currentDeckIndex];
       const inner = document.getElementById('flashcard-inner');
@@ -1151,13 +941,15 @@
 
       document.getElementById('deck-counter').textContent = `${currentDeckIndex + 1} / ${vocabularyData.length}`;
       
-      // Check for student's custom association
+      // Check for student's custom association in localStorage
       const savedNote = localStorage.getItem(`rj_assoc_${item.id}`) || '';
       document.getElementById('student-assoc-input').value = savedNote;
 
-      // Render Front
-      inner.innerHTML = `
-        <!-- FRONT SIDE -->
+      const front = document.getElementById('card-front');
+      const back = document.getElementById('card-back');
+
+      // Populate FRONT FACE (Pre-rotation)
+      front.innerHTML = `
         <div class="space-y-6 text-center my-auto">
           <div class="flex justify-between items-center">
             ${getCategoryBadge(item.category)}
@@ -1167,7 +959,7 @@
           <div class="space-y-2">
             <h2 class="text-3xl sm:text-5xl font-serif font-extrabold text-white tracking-wide flex items-center justify-center gap-3">
               <span>${item.word}</span>
-              <button onclick="event.stopPropagation(); speakText('${item.word.split('/')[0].trim()}')" class="text-stone-400 hover:text-amber-400 text-xl transition">
+              <button onclick="event.stopPropagation(); speakText('${item.word.split('/')[0].trim()}')" title="Pronounce Word" class="text-stone-400 hover:text-amber-400 text-xl transition">
                 <i class="fa-solid fa-volume-high"></i>
               </button>
             </h2>
@@ -1190,7 +982,44 @@
           </div>
 
           <div class="pt-4 text-stone-500 text-xs font-mono">
-            <i class="fa-solid fa-arrows-rotate mr-1"></i> Click card to reveal definition & dual example sentences
+            <i class="fa-solid fa-arrows-rotate mr-1"></i> Click card or press spacebar to reveal definition & Act 1 context
+          </div>
+        </div>
+      `;
+
+      // Populate BACK FACE (Pre-rotated so flipping displays normal text)
+      back.innerHTML = `
+        <div class="space-y-4 my-auto">
+          <div class="flex justify-between items-center border-b border-stone-800 pb-2">
+            <div class="flex items-center gap-2">
+              <h3 class="text-xl font-serif font-bold text-amber-400">${item.word}</h3>
+              <button onclick="event.stopPropagation(); speakText('${item.word.split('/')[0].trim()}')" title="Pronounce Word" class="text-stone-400 hover:text-amber-400 text-base transition">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+            </div>
+            <span class="text-xs font-mono text-stone-400">${item.pos}</span>
+          </div>
+
+          <!-- Definition -->
+          <div class="bg-stone-950 p-3.5 rounded-xl border border-stone-800 text-left">
+            <strong class="text-xs font-mono uppercase text-amber-400 block mb-1">Definition:</strong>
+            <p class="text-xs sm:text-sm text-stone-200 leading-relaxed">${item.def}</p>
+          </div>
+
+          <!-- Example 1: Shakespeare -->
+          <div class="p-3.5 bg-gradient-to-r from-rose-950/40 to-stone-950 rounded-xl border-l-2 border-rose-500 text-left">
+            <span class="text-[10px] font-mono uppercase font-bold text-rose-400 block"><i class="fa-solid fa-masks-theater mr-1"></i> Romeo & Juliet Act 1 Context:</span>
+            <p class="font-renaissance italic text-stone-100 text-xs sm:text-sm mt-1 leading-relaxed">"${item.exampleRJ}"</p>
+          </div>
+
+          <!-- Example 2: Modern -->
+          <div class="p-3.5 bg-stone-950 rounded-xl border-l-2 border-amber-500 text-left">
+            <span class="text-[10px] font-mono uppercase font-bold text-amber-400 block"><i class="fa-solid fa-globe mr-1"></i> Modern Sentence:</span>
+            <p class="text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">"${item.exampleModern}"</p>
+          </div>
+
+          <div class="text-center pt-2 text-[10px] font-mono text-stone-500">
+            <i class="fa-solid fa-arrows-rotate mr-1"></i> Click card or press spacebar to flip back
           </div>
         </div>
       `;
@@ -1199,44 +1028,11 @@
     function toggleCardFlip() {
       playTone('click');
       const inner = document.getElementById('flashcard-inner');
-      const item = vocabularyData[currentDeckIndex];
       cardIsFlipped = !cardIsFlipped;
-
       if (cardIsFlipped) {
-        inner.innerHTML = `
-          <!-- BACK SIDE (Revealed) -->
-          <div class="space-y-4 my-auto">
-            <div class="flex justify-between items-center border-b border-stone-800 pb-2">
-              <h3 class="text-xl font-serif font-bold text-amber-400">${item.word}</h3>
-              <span class="text-xs font-mono text-stone-400">${item.pos}</span>
-            </div>
-
-            <!-- Definition -->
-            <div class="bg-stone-950 p-3 rounded-xl border border-stone-800">
-              <strong class="text-xs font-mono uppercase text-amber-400 block mb-1">Definition:</strong>
-              <p class="text-xs sm:text-sm text-stone-200 leading-relaxed">${item.def}</p>
-            </div>
-
-            <!-- Example 1: Shakespeare -->
-            <div class="p-3 bg-gradient-to-r from-rose-950/40 to-stone-950 rounded-xl border-l-2 border-rose-500">
-              <span class="text-[10px] font-mono uppercase font-bold text-rose-400 block"><i class="fa-solid fa-masks-theater mr-1"></i> Romeo & Juliet Act 1 Context:</span>
-              <p class="font-renaissance italic text-stone-100 text-xs sm:text-sm mt-1 leading-relaxed">"${item.exampleRJ}"</p>
-            </div>
-
-            <!-- Example 2: Modern -->
-            <div class="p-3 bg-stone-950 rounded-xl border-l-2 border-amber-500">
-              <span class="text-[10px] font-mono uppercase font-bold text-amber-400 block"><i class="fa-solid fa-globe mr-1"></i> Modern Sentence:</span>
-              <p class="text-xs sm:text-sm text-stone-300 mt-1 leading-relaxed">"${item.exampleModern}"</p>
-            </div>
-
-            <div class="text-center pt-2 text-[10px] font-mono text-stone-500">
-              <i class="fa-solid fa-arrows-rotate mr-1"></i> Click again to flip back
-            </div>
-          </div>
-        `;
         inner.classList.add('rotate-y-180');
       } else {
-        renderFlashcard();
+        inner.classList.remove('rotate-y-180');
       }
     }
 
@@ -1254,29 +1050,33 @@
 
     function shuffleDeck() {
       playTone('click');
-      vocabularyData.sort(() => Math.random() - 0.5);
+      for (let i = vocabularyData.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [vocabularyData[i], vocabularyData[j]] = [vocabularyData[j], vocabularyData[i]];
+      }
       currentDeckIndex = 0;
       renderFlashcard();
     }
 
-    function saveStudentAssociation() {
+    function saveStudentAssoc() {
       const item = vocabularyData[currentDeckIndex];
       const val = document.getElementById('student-assoc-input').value.trim();
-      if (val) {
-        localStorage.setItem(`rj_assoc_${item.id}`, val);
-        playTone('success');
-        const status = document.getElementById('save-status');
-        status.classList.remove('hidden');
-        setTimeout(() => status.classList.add('hidden'), 2000);
-        updateSavedCount();
-      }
+      localStorage.setItem(`rj_assoc_${item.id}`, val);
+      playTone('correct');
+      
+      // Update mastered count
+      let mastered = 0;
+      vocabularyData.forEach(v => {
+        if (localStorage.getItem(`rj_assoc_${v.id}`)) mastered++;
+      });
+      document.getElementById('stat-mastered-count').textContent = mastered;
     }
 
-    // Keyboard navigation for flashcards
-    window.addEventListener('keydown', (e) => {
-      const flashSection = document.getElementById('view-flashcards');
-      if (!flashSection.classList.contains('hidden')) {
-        if (e.code === 'Space') {
+    // Spacebar listener for flip, arrow keys for navigation
+    document.addEventListener('keydown', (e) => {
+      const activeTab = document.getElementById('view-deck');
+      if (activeTab && !activeTab.classList.contains('hidden')) {
+        if (e.code === 'Space' && e.target.tagName !== 'INPUT') {
           e.preventDefault();
           toggleCardFlip();
         } else if (e.code === 'ArrowRight') {
@@ -1288,156 +1088,240 @@
     });
 
     // =========================================================
-    // TAB 3: THE VERONA DUEL QUIZ ENGINE
     // =========================================================
-    function loadQuizQuestion() {
-      quizAnswerSelected = false;
-      const q = quizQuestions[currentQuizIndex];
+    const duelQuestions = [
+      {
+        q: "In the Prologue, Shakespeare writes: 'Where civil blood makes civil hands unclean.' What double meaning does 'civil' hold?",
+        options: [
+          "Wealthy versus impoverished citizens.",
+          "Citizens of the same community, and courteous, polite behavior.",
+          "Military soldiers versus domestic servants.",
+          "Ancient Italian language and modern Latin."
+        ],
+        answer: 1,
+        explanation: "Shakespeare juxtaposes 'civil' as fellow citizens killing each other, and 'civil' as the courteous behavior they have abandoned."
+      },
+      {
+        q: "Tybalt calls Benvolio his sworn enemy. Which pair of words from the presentation means an opponent in a fight or war?",
+        options: [
+          "Foe / Adversary",
+          "Merit / Accord",
+          "Grievance / Defiance",
+          "Nourish / Oppress"
+        ],
+        answer: 0,
+        explanation: "Foe and adversary both denote a hostile opponent or sworn enemy."
+      },
+      {
+        q: "Lord Capulet says he will only grant his daughter's hand in marriage if Paris wins Juliet's agreement. Which word means formal approval or permission?",
+        options: [
+          "Defiance",
+          "Consent",
+          "Adversity",
+          "Manners"
+        ],
+        answer: 1,
+        explanation: "Consent signifies voluntary agreement, approval, or permission."
+      },
+      {
+        q: "Lady Capulet compares Paris to a precious book, asking Juliet to look closely and uncover what is hidden in his eyes. Which word means to conceal or hide from view?",
+        options: [
+          "Disparage",
+          "Intrude",
+          "Obscure",
+          "Inherit"
+        ],
+        answer: 2,
+        explanation: "To obscure means to conceal, cover, or make unclear or difficult to see."
+      },
+      {
+        q: "When Benvolio tries to break up the servants' street brawl, he swings his sword in a pointless attempt to bring peace. What expression describes something done pointlessly or unsuccessfully?",
+        options: [
+          "In vain",
+          "In accord",
+          "In defiance",
+          "In civil"
+        ],
+        answer: 0,
+        explanation: "'In vain' describes an action that produces no positive result or is completely futile."
+      },
+      {
+        q: "Tybalt becomes furious at the masquerade banquet when he realizes Romeo has crashed the party without permission. Which word means to enter uninvited?",
+        options: [
+          "Intrude",
+          "Nourish",
+          "Bind",
+          "Merit"
+        ],
+        answer: 0,
+        explanation: "To intrude means to enter a space or gathering without permission or welcome."
+      },
+      {
+        q: "Lord Capulet commands Tybalt to calm down and respect Romeo, saying he would not for all the wealth in Verona have Romeo belittled under his roof. Which word means to insult or speak of someone with little value?",
+        options: [
+          "Oppress",
+          "Disparage",
+          "Accord",
+          "Inherit"
+        ],
+        answer: 1,
+        explanation: "To disparage means to belittle, insult, or degrade someone's reputation."
+      },
+      {
+        q: "Capulet reminds Tybalt that young Romeo has a strong reputation throughout Verona for integrity, modesty, and goodness. Which word describes high moral standards and righteousness?",
+        options: [
+          "Virtue / Virtuous",
+          "Grievance",
+          "Adversity",
+          "Civilian"
+        ],
+        answer: 0,
+        explanation: "Virtue refers to moral excellence, righteousness, and pure ethical character."
+      },
+      {
+        q: "Upon discovering that the enchanting boy she kissed is a Montague, Juliet cries: 'My only love sprung from my only hate!' Which word means to despise or feel deep revulsion toward?",
+        options: [
+          "Nourish",
+          "Back",
+          "Loathe",
+          "Consent"
+        ],
+        answer: 2,
+        explanation: "To loathe means to hate deeply or experience intense revulsion."
+      },
+      {
+        q: "Prince Escalus issues a decree that anyone who starts another street riot will be executed. What word describes a consequence that is extremely harsh, serious, or strict?",
+        options: [
+          "Obscure",
+          "Severe / Severity",
+          "Virtuous",
+          "Mannerly"
+        ],
+        answer: 1,
+        explanation: "Severe means extremely harsh, grave, or intensely rigorous."
+      }
+    ];
 
-      document.getElementById('quiz-progress').textContent = `Challenge ${currentQuizIndex + 1} of ${quizQuestions.length}`;
-      document.getElementById('quiz-question').textContent = q.question;
-      document.getElementById('quiz-subtext').textContent = q.subtext;
+    let duelCurrentIndex = 0;
+    let duelScore = 0;
 
-      const container = document.getElementById('quiz-options-container');
-      container.innerHTML = '';
+    function renderDuelQuestion() {
+      const q = duelQuestions[duelCurrentIndex];
+      document.getElementById('duel-question-num').textContent = `${duelCurrentIndex + 1} / ${duelQuestions.length}`;
+      document.getElementById('duel-question-text').textContent = q.q;
 
-      const feedback = document.getElementById('quiz-feedback');
-      feedback.classList.add('hidden');
-      document.getElementById('quiz-next-btn').classList.add('hidden');
+      const optsContainer = document.getElementById('duel-options');
+      const feedback = document.getElementById('duel-feedback');
+      const nextBtn = document.getElementById('duel-next-btn');
 
-      q.options.forEach((optText, i) => {
-        const btn = document.createElement('button');
-        btn.className = "p-4 bg-stone-950 hover:bg-stone-800 text-stone-200 border border-stone-800 hover:border-amber-500/50 rounded-xl text-left text-xs sm:text-sm font-medium transition flex items-center space-x-3";
-        btn.onclick = () => selectQuizOption(i);
-        btn.innerHTML = `
-          <span class="w-6 h-6 rounded-md bg-stone-800 text-amber-400 flex items-center justify-center text-xs font-mono font-bold shrink-0">${String.fromCharCode(65 + i)}</span>
-          <span class="font-serif leading-snug">${optText}</span>
-        `;
-        container.appendChild(btn);
-      });
+      feedback.className = 'p-4 rounded-xl hidden text-sm font-medium';
+      nextBtn.classList.add('hidden');
+
+      optsContainer.innerHTML = q.options.map((opt, idx) => `
+        <button onclick="handleDuelChoice(${idx})" class="duel-opt-btn w-full text-left p-4 rounded-xl bg-stone-950 border border-stone-800 hover:border-amber-500 text-stone-200 text-xs sm:text-sm font-medium transition flex items-center justify-between">
+          <span>${opt}</span>
+          <i class="fa-regular fa-circle text-stone-600"></i>
+        </button>
+      `).join('');
     }
 
-    function selectQuizOption(selectedIndex) {
-      if (quizAnswerSelected) return;
-      quizAnswerSelected = true;
+    function handleDuelChoice(chosenIndex) {
+      const q = duelQuestions[duelCurrentIndex];
+      const buttons = document.querySelectorAll('.duel-opt-btn');
+      const feedback = document.getElementById('duel-feedback');
+      const nextBtn = document.getElementById('duel-next-btn');
 
-      const q = quizQuestions[currentQuizIndex];
-      const options = document.getElementById('quiz-options-container').children;
-      const feedback = document.getElementById('quiz-feedback');
-      const feedbackIcon = document.getElementById('quiz-feedback-icon');
-      const feedbackTitle = document.getElementById('quiz-feedback-title');
-      const feedbackText = document.getElementById('quiz-feedback-text');
+      buttons.forEach(b => b.disabled = true);
 
-      if (selectedIndex === q.correct) {
-        quizScore += 10;
-        playTone('success');
+      if (chosenIndex === q.answer) {
+        playTone('correct');
+        duelScore += 10;
+        buttons[chosenIndex].classList.remove('bg-stone-950', 'border-stone-800');
+        buttons[chosenIndex].classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
+        buttons[chosenIndex].querySelector('i').className = 'fa-solid fa-circle-check text-emerald-400';
 
-        options[selectedIndex].className = "p-4 bg-emerald-950/80 border-2 border-emerald-500 text-emerald-100 rounded-xl text-left text-xs sm:text-sm font-medium flex items-center space-x-3";
-        feedback.className = "p-4 rounded-xl text-xs sm:text-sm border bg-emerald-950/40 border-emerald-500/50 text-emerald-200 flex items-start space-x-3";
-        feedbackIcon.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400"></i>`;
-        feedbackTitle.textContent = "Noble Strike! Correct Answer.";
+        feedback.className = 'p-4 rounded-xl text-xs sm:text-sm bg-emerald-950/80 border border-emerald-800 text-emerald-200 block';
+        feedback.innerHTML = `<i class="fa-solid fa-check mr-1.5 font-bold"></i> <strong>Spot On!</strong> ${q.explanation}`;
       } else {
-        playTone('error');
+        playTone('wrong');
+        buttons[chosenIndex].classList.remove('bg-stone-950', 'border-stone-800');
+        buttons[chosenIndex].classList.add('bg-rose-950', 'border-rose-500', 'text-rose-200');
+        buttons[chosenIndex].querySelector('i').className = 'fa-solid fa-circle-xmark text-rose-400';
 
-        options[selectedIndex].className = "p-4 bg-rose-950/80 border-2 border-rose-500 text-rose-100 rounded-xl text-left text-xs sm:text-sm font-medium flex items-center space-x-3";
-        options[q.correct].className = "p-4 bg-emerald-950/80 border-2 border-emerald-500 text-emerald-100 rounded-xl text-left text-xs sm:text-sm font-medium flex items-center space-x-3";
+        buttons[q.answer].classList.remove('bg-stone-950', 'border-stone-800');
+        buttons[q.answer].classList.add('bg-emerald-950/60', 'border-emerald-600', 'text-emerald-200');
 
-        feedback.className = "p-4 rounded-xl text-xs sm:text-sm border bg-rose-950/40 border-rose-500/50 text-rose-200 flex items-start space-x-3";
-        feedbackIcon.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-400"></i>`;
-        feedbackTitle.textContent = "Foiled! Incorrect.";
+        feedback.className = 'p-4 rounded-xl text-xs sm:text-sm bg-rose-950/80 border border-rose-800 text-rose-200 block';
+        feedback.innerHTML = `<i class="fa-solid fa-xmark mr-1.5 font-bold"></i> <strong>Mistaken!</strong> ${q.explanation}`;
       }
 
-      feedbackText.textContent = q.explanation;
-      feedback.classList.remove('hidden');
-
-      document.getElementById('quiz-score').textContent = quizScore;
-      document.getElementById('quiz-next-btn').classList.remove('hidden');
+      document.getElementById('duel-score-display').textContent = `Score: ${duelScore} pts`;
+      document.getElementById('stat-score-count').textContent = `${Math.round((duelScore / ((duelCurrentIndex + 1) * 10)) * 100)}%`;
+      nextBtn.classList.remove('hidden');
     }
 
-    function nextQuizQuestion() {
-      playTone('click');
-      if (currentQuizIndex < quizQuestions.length - 1) {
-        currentQuizIndex++;
-        loadQuizQuestion();
+    function nextDuelQuestion() {
+      duelCurrentIndex++;
+      if (duelCurrentIndex < duelQuestions.length) {
+        renderDuelQuestion();
       } else {
-        showQuizVictory();
+        playTone('correct');
+        const container = document.getElementById('duel-question-container');
+        container.innerHTML = `
+          <div class="text-center py-10 space-y-4">
+            <div class="w-16 h-16 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-3xl mx-auto border border-amber-500/40">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3 class="text-2xl font-serif-title font-bold text-white">Duel Concluded</h3>
+            <p class="text-sm text-stone-300">Thy final Verona tally stands at <strong>${duelScore} / 100 points</strong>.</p>
+            <button onclick="resetDuel()" class="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs transition">
+              Restart Duel
+            </button>
+          </div>
+        `;
+        document.getElementById('duel-next-btn').classList.add('hidden');
       }
     }
 
-    function restartQuiz() {
+    function resetDuel() {
+      duelCurrentIndex = 0;
+      duelScore = 0;
+      document.getElementById('duel-score-display').textContent = `Score: 0 pts`;
+      renderDuelQuestion();
+    }
+
+    // =========================================================
+    // =========================================================
+    function switchTab(tabId) {
       playTone('click');
-      currentQuizIndex = 0;
-      quizScore = 0;
-      document.getElementById('quiz-score').textContent = "0";
-      loadQuizQuestion();
-    }
-
-    function showQuizVictory() {
-      const card = document.getElementById('view-quiz');
-      card.innerHTML = `
-        <div class="bg-stone-900 border border-amber-600/50 rounded-3xl p-8 sm:p-12 text-center space-y-6 shadow-2xl max-w-xl mx-auto my-12">
-          <div class="w-20 h-20 bg-gradient-to-tr from-amber-600 to-rose-700 text-white rounded-full flex items-center justify-center text-3xl mx-auto border-2 border-amber-300 shadow-xl">
-            <i class="fa-solid fa-crown"></i>
-          </div>
-          <div class="space-y-2">
-            <h3 class="text-3xl font-serif font-extrabold text-white">Verona Duel Concluded!</h3>
-            <p class="text-sm text-stone-300 font-renaissance">You have navigated the treacherous feuds and passions of Act I with true lexical honor.</p>
-          </div>
-          <div class="p-4 bg-stone-950 rounded-xl border border-stone-800">
-            <span class="text-xs text-stone-400 font-mono uppercase">Final Master Score</span>
-            <span class="block text-4xl font-serif font-extrabold text-amber-400 mt-1">${quizScore} / 100</span>
-          </div>
-          <button onclick="location.reload()" class="px-8 py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase tracking-wider font-mono transition shadow-lg shadow-amber-600/30">
-            Play Again / Review Codex
-          </button>
-        </div>
-      `;
-    }
-
-    // =========================================================
-    // TAB 4: ACT 1 SCENES RENDERING
-    // =========================================================
-    function renderScenesArchive() {
-      const container = document.getElementById('scenes-container');
-      container.innerHTML = '';
-
-      act1Scenes.forEach(sc => {
-        const div = document.createElement('div');
-        div.className = "bg-stone-900/90 border border-stone-800 rounded-2xl p-6 space-y-3 shadow-lg";
-        
-        // Highlight words
-        let formattedQuote = sc.quote;
-        sc.targets.forEach(tid => {
-          const vocab = vocabularyData.find(v => v.id === tid);
-          if (vocab) {
-            const root = vocab.word.split('/')[0].split('(')[0].trim();
-            const re = new RegExp(`\\b(${root}[a-z]*)\\b`, 'gi');
-            formattedQuote = formattedQuote.replace(re, `<mark class="bg-amber-500/30 text-amber-300 px-1 py-0.5 rounded font-bold border border-amber-500/40">$1</mark>`);
-          }
-        });
-
-        div.innerHTML = `
-          <div class="flex items-center justify-between border-b border-stone-800 pb-2">
-            <div>
-              <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-400">${sc.act}</span>
-              <h4 class="text-base font-serif font-bold text-white">${sc.title}</h4>
-            </div>
-            <div class="flex gap-1.5 flex-wrap">
-              ${sc.targets.map(tid => `<span class="px-2 py-0.5 rounded bg-stone-800 text-[10px] font-mono text-amber-400">${tid}</span>`).join('')}
-            </div>
-          </div>
-          <p class="font-renaissance italic text-stone-200 text-sm leading-relaxed whitespace-pre-line">${formattedQuote}</p>
-        `;
-        container.appendChild(div);
+      ['lexicon', 'deck', 'duel', 'play'].forEach(t => {
+        const view = document.getElementById(`view-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (t === tabId) {
+          view.classList.remove('hidden');
+          btn.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-amber-600 text-white shadow-md shadow-amber-950";
+        } else {
+          view.classList.add('hidden');
+          btn.className = "px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all text-stone-400 hover:text-stone-100 hover:bg-stone-900";
+        }
       });
+
+      if (tabId === 'deck') renderFlashcard();
+      if (tabId === 'duel') renderDuelQuestion();
     }
 
-    // INITIALIZATION
-    window.addEventListener('DOMContentLoaded', () => {
-      renderLexiconCards('all');
-      renderScenesArchive();
-      updateSavedCount();
-    });
+    window.onload = function() {
+      renderLexiconGrid();
+      renderFlashcard();
+      renderDuelQuestion();
+
+      // Count initial mastered items from localStorage
+      let mastered = 0;
+      vocabularyData.forEach(v => {
+        if (localStorage.getItem(`rj_assoc_${v.id}`)) mastered++;
+      });
+      document.getElementById('stat-mastered-count').textContent = mastered;
+    };
   </script>
 </body>
 </html>
